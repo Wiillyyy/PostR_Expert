@@ -32,7 +32,7 @@ requetes PHP & SQL, un peu de HTML et beaucoup de CSS, de quoi faire un trèes b
 <section a remplir>
 
 ## ℹ Informations <a name = "informations"></a>
-Le rendu final du projet consiste à proposer un site web dans lequel on pourra accéder en tant que guest et consulter les posters, si on veut les ajouter dans le panier il faudra être connecté, la page de connexion permet de se connecter mais également d'envoyer un mail pour indiquer a l'utilisateur qu'il s'est bien connecté.
+Le rendu final du projet consiste à proposer un site web dans lequel on pourra accéder en tant que guest et consulter les posters, si on veut les ajouter dans le panier il faudra être connecté, la page de connexion permet de se connecter mais également de s'inscrire, mon serveur mail s'assurera d'envoyer un mail à l'adresse fournie pour indiquer a l'utilisateur qu'il s'est bien connecté.
 et pour finir pour gérer le site un ID admin permettra d'accéder a des fonctions supplémentaires notamment la gestion des posters et des prix.
 
 ## 💻 Langages Utilisés <a name = "lang"></a>
