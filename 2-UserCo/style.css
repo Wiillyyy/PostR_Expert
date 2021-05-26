@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
-/* BASIC */
+/* Basique */
 
 html {
-  background-color: #56baed;
+  background-color: #da8920;
 }
 
 body {
@@ -12,7 +12,7 @@ body {
 }
 
 a {
-  color: #92badd;
+  color: #ddb492;
   display:inline-block;
   text-decoration: none;
   font-weight: 400;
@@ -29,8 +29,36 @@ h2 {
 }
 
 
+/* fleche */
+.fleche {
+  border: solid #da8920;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 8px;
+  position: fixed;
+  left: 26.2px;
+  top: 21px;
+  z-index: 2;
+}
+.gauche {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
 
-/* STRUCTURE */
+/* Bouton retour*/
+
+#cercle {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: whitesmoke;
+  position: fixed;
+  top: 10px;
+  z-index: 1;
+
+}
+
+/* Structure du Hoover */
 
 .wrapper {
   display: flex;
@@ -67,7 +95,7 @@ h2 {
 
 
 
-/* TABS */
+/* Les deux tabs */
 
 h2.inactive {
   color: #cccccc;
@@ -75,15 +103,19 @@ h2.inactive {
 
 h2.active {
   color: #0d0d0d;
-  border-bottom: 2px solid #5fbae9;
+  border-bottom: 2px solid #da8920;
+}
+
+h3 {
+  font-size: 15px ;
 }
 
 
 
-/* FORM TYPOGRAPHY*/
+/* Typo*/
 
 input[type=button], input[type=submit], input[type=reset]  {
-  background-color: #56baed;
+  background-color: #da8920;
   border: none;
   color: white;
   padding: 15px 80px;
@@ -104,8 +136,10 @@ input[type=button], input[type=submit], input[type=reset]  {
   transition: all 0.3s ease-in-out;
 }
 
+/* Boutton Login/connexion */
+
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
-  background-color: #39ace7;
+  background-color: #101111;
 }
 
 input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
@@ -139,7 +173,7 @@ input[type=text] {
 
 input[type=text]:focus {
   background-color: #fff;
-  border-bottom: 2px solid #5fbae9;
+  border-bottom: 2px solid #e97b5f;
 }
 
 input[type=text]:placeholder {
@@ -148,9 +182,9 @@ input[type=text]:placeholder {
 
 
 
-/* ANIMATIONS */
+/* Les animations */
 
-/* Simple CSS3 Fade-in-down Animation */
+/* Animation  CSS3 fadiin webkit opacité reduite */
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
@@ -186,7 +220,7 @@ input[type=text]:placeholder {
   }
 }
 
-/* Simple CSS3 Fade-in Animation */
+/*  CSS3 Fade-in Animation */
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
@@ -237,7 +271,7 @@ input[type=text]:placeholder {
   bottom: -10px;
   width: 0;
   height: 2px;
-  background-color: #56baed;
+  background-color: #000000;
   content: "";
   transition: width 0.2s;
 }
@@ -252,7 +286,7 @@ input[type=text]:placeholder {
 
 
 
-/* OTHERS */
+/* focus et icons  */
 
 *:focus {
     outline: none;

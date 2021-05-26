@@ -3,11 +3,19 @@
     <head>
         <link type="text/css" rel="stylesheet" href="style.css">
     </head>
+    <body>
+    <a href="../index.php">
+    <p><i class="fleche gauche"></i></p></a>
+
+    <a href="../index.php">
+    <div id="cercle"></div></a>
+
+
 <div class="wrapper fadeInDown">
     <div id="formContent">
       <!-- Se connecter / -->
       <h2 class="active"> Se Connecter </h2>
-      <h2 class="inactive underlineHover"> <a href="Inscription.php">Inscription</a></h2>
+      <h2 class="inactive underlineHover"> <a href="Inscription.php">S'inscrire</a></h2>
   
   
       <!-- Section Login -->
@@ -19,9 +27,11 @@
   
       <!-- Remind Passowrd -->
       <div id="formFooter">
-        <a class="underlineHover" href="#">Mot de passe oublié ?</a>
+        <a class="underlineHover" href="oubli.php">Mot de passe oublié ?</a>
       </div>
   
     </div>
   </div>
+
+</body>
   </html>
