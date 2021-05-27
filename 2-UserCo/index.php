@@ -28,7 +28,7 @@
       <h2 class="inactive underlineHover"> <a href="Inscription.php">S'inscrire</a></h2>
   
   
-      <!-- Section Login -->
+      <!-- la section Login -->
       <form>
         <input type="text" id="login" class="fadeIn second" name="Email" placeholder="Email">
 
@@ -44,7 +44,7 @@
       <h3>Voir le mot de passe</h3>
 
   
-      <!-- Remind Passowrd -->
+      <!--  Passowrd oublié -->
       <div id="formFooter">
         <a class="underlineHover" href="oubli.php">Mot de passe oublié ?</a>
       </div>

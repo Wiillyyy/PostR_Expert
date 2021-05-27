@@ -4,6 +4,8 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: blue orange; /* scroll thumb and track */
 }
 p {
 	margin-bottom: 0px;
@@ -168,7 +170,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 
-/* Header Style */
+/* CSS du Header */
 header {
 	position: absolute;
 	z-index: 99999;
@@ -225,6 +227,23 @@ header .navbar {
 	font-style: normal;
 	color: #f48840;
 }
+
+.navbar-brand:hover {
+	-webkit-transform: scale(1.1) rotate(4deg);
+	transform: scale(1.1) rotate(4deg);
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	-webkit-transform: scale(1.1) rotate(-4deg);
+	transform: scale(1.1) rotate(-4deg);
+  }
+
 #navbarResponsive {
 	z-index: 999;
 }
@@ -249,6 +268,17 @@ header .navbar {
 .navbar .navbar-nav .nav-link.show,
 .navbar .navbar-nav .show>.nav-link {
 	color: #f48840;
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
 }
 .navbar .navbar-toggler-icon {
 	background-image: none;

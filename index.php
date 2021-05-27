@@ -29,7 +29,7 @@
 
   <body>
 
-    <!-- ***** Preloader Start ***** -->
+    <!-- ***** Preloader navbar ***** -->
     <div id="preloader">
         <div class="jumper">
             <div></div>
@@ -37,7 +37,7 @@
             <div></div>
         </div>
     </div>  
-    <!-- ***** Preloader End ***** -->
+    <!-- ***** -- ***** -->
 
     <!-- Header -->
     <header class="">
@@ -62,16 +62,6 @@
               <li class="nav-item">
                 <a class="nav-link" href="checkout.html">Panier</a>
               </li>
-
-              <!--<li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Plus</a>
-                  
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="about.html">Qui suis-je</a>
-                    <a class="dropdown-item" href="blog.html">Blog</a>
-                    <a class="dropdown-item" href="testimonials.html">Commentaires</a>
-                    <a class="dropdown-item" href="terms.html">Surprise :)</a>
-                  </div>-->
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/2-UserCo/index.php">Connexion</a>
