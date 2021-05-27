@@ -5,7 +5,10 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="description" content="LoginClient">
       <meta name="author" content="William">
+
       <link type="text/css" rel="stylesheet" href="style.css">
+      <script src="mdp.js"></script>
+
       <title>Connexion</title>
       <link rel="icon" type="image/png" href="/assets/logo/posterexpertlogo.png">
   </head>
@@ -31,6 +34,7 @@
         <input type="password" id="password" class="fadeIn third" name="Mot De Passe" placeholder="Mot de Passe">
         <input type="submit" class="fadeIn fourth" value="Connexion">
       </form>
+      <input type="checkbox" onclick="myFunction()">Voir le mot de passe
   
       <!-- Remind Passowrd -->
       <div id="formFooter">
