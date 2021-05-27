@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link type="text/css" rel="stylesheet" href="style.css">
-    </head>
-
+<head>
+  <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="LoginClient">
+      <meta name="author" content="William">
+      <link type="text/css" rel="stylesheet" href="style.css">
+      <title>Connexion Admin</title>
+      <link rel="icon" type="image/png" href="/assets/logo/posterexpertadmin.png">
+</head>
 
     <body>
     <a href="../index.php">

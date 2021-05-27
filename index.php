@@ -9,13 +9,13 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
     
-    <title>PostR Expert</title>
+    <title>PostR Expert - Menu</title>
 
     <!-- Script Java POSTR animé -->
     <script type="text/javascript"></script>
 		<script src="https://unpkg.com/typewriter-effect@2.3.1/dist/core.js"></script>
 		<script src="java.js"></script>
-
+    <link rel="icon" type="image/png" href="/assets/logo/posterexpertlogo.png">
 
     <!-- Fichier Bootstrap (banque d'images/logos) CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

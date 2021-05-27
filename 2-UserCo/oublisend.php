@@ -7,8 +7,9 @@
       <meta name="author" content="William">
       <link type="text/css" rel="stylesheet" href="style.css">
       <title>Oubli MDP</title>
+      <link rel="icon" type="image/png" href="/assets/logo/posterexpertlogo.png">
     </head>
-    
+
 <div class="wrapper fadeInDown">
     <div id="formContent">
       <!-- Tabs Titles -->
