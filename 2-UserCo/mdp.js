@@ -1,8 +1,10 @@
 function myFunction() {
-    var x = document.getElementById("formContent");
-    if (x.type === "password") {
-      x.type = "text";
+
+    var AfficheMDP = document.getElementById('password');
+
+    if (AfficheMDP.type === 'password') {
+      AfficheMDP.type = 'text';
     } else {
-      x.type = "password";
+      AfficheMDP.type = 'password';
     }
 }

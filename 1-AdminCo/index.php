@@ -29,7 +29,15 @@
         <input type="text" id="login" class="fadeIn second" name="Email" placeholder="Email">
         <input type="password" id="password" class="fadeIn third" name="Mot De Passe" placeholder="Mot de Passe">
         <input type="submit" class="fadeIn fourth" value="Connexion">
+
       </form>
+
+      <label class="switch">
+      <input type="checkbox" onclick="myFunction()" Class="AfficheMDP">
+      <span class="slider round"></span>
+      </label>
+      <h3>Voir le mot de passe</h3>
+      
   
     </div>
   </div>
