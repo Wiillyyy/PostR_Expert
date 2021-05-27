@@ -28,7 +28,7 @@
       <!-- Section Login -->
       <form>
         <input type="text" id="login" class="fadeIn second" name="Email" placeholder="Email">
-        <input type="text" id="password" class="fadeIn third" name="Mot De Passe" placeholder="Mot de Passe">
+        <input type="password" id="password" class="fadeIn third" name="Mot De Passe" placeholder="Mot de Passe">
         <input type="submit" class="fadeIn fourth" value="Connexion">
       </form>
   
