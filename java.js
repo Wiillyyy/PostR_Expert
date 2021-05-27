@@ -9,3 +9,4 @@ var typewriter = new Typewriter(app, {
 typewriter.typeString('Bienvenue !')
     .pauseFor(2500)
     .deleteAll()
+    .yeay()
