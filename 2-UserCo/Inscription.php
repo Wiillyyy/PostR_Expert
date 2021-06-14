@@ -5,7 +5,9 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="description" content="LoginClient">
       <meta name="author" content="William">
-      <link type="text/css" rel="stylesheet" href="style.css">
+      <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+      <script src="assets/js/mdp.js"></script>
+
       <title>Inscription</title>
       <link rel="icon" type="image/png" href="/assets/logo/posterexpertlogo.png">
     </head>
@@ -26,10 +28,12 @@
   
   
       <!-- page Inscription -->
-      <form>
-      <input type="text" id="username" class="fadeIn second" name="Username" placeholder="Pseudo">
-      <input type="text" id="login" class="fadeIn second" name="Email" placeholder="Email">
-      <input type="password" id="password" class="fadeIn third" name="MDP" placeholder="Mot de Passe">
+      <form METHOD="GET" ACTION="inscriptionOK.php">
+      
+      <input type="text" id="login" class="fadeIn second" name="P_Email" placeholder="Email" 
+      pattern="/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g" title="Merci d'entrer un E-mail valide !" required>
+
+      <input type="password" id="password" class="fadeIn third" name="P_MDP" placeholder="Mot de Passe" required>
       <input type="submit" class="fadeIn fourth" value="Inscription">
       </form>
 
@@ -39,8 +43,14 @@
       </label>
       <h3>Voir le mot de passe</h3>
   
-  
+      <?php
+	require_once("assets/sql/connexion.php");
+	$conn1=connexionBDD();
+	require_once("assets/sql/fonctionBDD.php");
+ ?>
     </div>
   </div>
 </body>
   </html>
+
+ 

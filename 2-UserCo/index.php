@@ -6,8 +6,8 @@
       <meta name="description" content="LoginClient">
       <meta name="author" content="William">
 
-      <link type="text/css" rel="stylesheet" href="style.css">
-      <script src="mdp.js"></script>
+      <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+      <script src="assets/js/mdp.js"></script>
 
       <title>Connexion</title>
       <link rel="icon" type="image/png" href="/assets/logo/posterexpertlogo.png">

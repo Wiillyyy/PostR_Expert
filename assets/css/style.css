@@ -90,17 +90,7 @@ h1,h2,h3,h4,h5,h6 {
 	letter-spacing: 0.5px;
 }
 
-#preloader {
-  overflow: hidden;
-  background: #f48840;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  position: fixed;
-  z-index: 9999999;
-  color: #fff;
-}
+
 
 #preloader .jumper {
   left: 0;

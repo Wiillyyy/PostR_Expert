@@ -44,7 +44,7 @@
       <nav class="navbar navbar-expand-lg">
         <div class="container">
           <a class="navbar-brand" href="index.php"><h2>Post<span style="color: #f48840">R</span> Expert<em>.</em></h2></a>
-          <div id="app"><h3>.</h3></div>
+          <div id="app"><h3>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ ㅤㅤㅤ</h3></div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -64,7 +64,7 @@
               </li>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/2-UserCo/index.php">Connexion</a>
+                <a class="nav-link" href="2-UserCo/index.php">Connexion</a>
               </li>
             </ul>
           </div>
@@ -78,109 +78,7 @@
       <div class="container-fluid">
         <div class="owl-banner owl-carousel">
           <div class="item">
-            <!--
-            <img src="assets/images/product-1-720x480.jpg" alt="">
-            <div class="item-content">
-              
-              <div class="main-content">
-                <div class="meta-category">
-                  <span> <span style="color: red"><del>999.99€</del></span>  700.00€ </span>
-                </div>
-
-                <a href="vacation-details.html"><h4>Lorem ipsum dolor sit amet.</h4></a>
-
-                <ul class="post-info">
-                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet veniam, architecto invento audantium reprehenderit. Eius, architecto necessitatibus.</li>
-                </ul>
-              </div>
             
-            </div> 
-          </div>
-          <div class="item">
-            <img src="assets/images/product-2-720x480.jpg" alt="">
-            <div class="item-content">
-              
-              <div class="main-content">
-                <div class="meta-category">
-                  <span> <del>850.99€</del>  699.99€ </span>
-                </div>
-
-                <a href="vacation-details.html"><h4>Lorem ipsum dolor sit amet.</h4></a>
-
-                <ul class="post-info">
-                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ipsa maxime, recusandae expedita officia eligendi aliquam molestiae qui id eius.</li>
-                </ul>
-              </div>
-            
-            </div>
-          </div>
-          <div class="item">
-            <img src="assets/images/product-3-720x480.jpg" alt="">
-            <div class="item-content">
-              
-              <div class="main-content">
-                <div class="meta-category">
-                  <span> <del>100.99€</del>  1.00€ </span>
-                </div>
-
-                <a href="vacation-details.html"><h4>Lorem ipsum dolor sit amet.</h4></a>
-
-                <ul class="post-info">
-                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, error repudiandae sunt totam nemo enim minus incidunt veritatis maxime autem!</li>
-                </ul>
-              </div>
-            
-            </div>
-          </div>
-          <div class="item">
-            <img src="assets/images/product-4-720x480.jpg" alt="">
-            <div class="item-content">
-              
-              <div class="main-content">
-                <div class="meta-category">
-                  <span> <del>$500.00</del>  $700.00 </span>
-                </div>
-
-                <a href="vacation-details.html"><h4>Lorem ipsum dolor sit amet.</h4></a>
-
-                <ul class="post-info">
-                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid, saepe nemo molestiae. Optio eaque dignissimos, earum officia vel amet.</li>
-                </ul>
-              </div>
-            
-            </div>
-          </div>
-          <div class="item">
-            <img src="assets/images/product-5-720x480.jpg" alt="">
-            <div class="item-content">
-              
-              <div class="main-content">
-                <div class="meta-category">
-                  <span> <del>$500.00</del>  $700.00 </span>
-                </div>
-
-                <a href="vacation-details.html"><h4>Lorem ipsum dolor sit amet.</h4></a>
-
-                <ul class="post-info">
-                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta id similique quisquam quam maiores adipisci velit molestias illum inventore aliquam.</li>
-                </ul>
-              </div>
-            
-            </div>
-          </div>
-          <div class="item">
-            <img src="assets/images/product-6-720x480.jpg" alt="">
-            <div class="item-content">
-              <div class="main-content">
-                <div class="meta-category">
-                  <span> <del>$500.00</del>  $700.00 </span>
-                </div>
-
-                <a href="vacation-details.html"><h4>Lorem ipsum dolor sit amet.</h4></a>
-
-                <ul class="post-info">
-                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero incidunt dolorum omnis provident doloribus nisi ratione asperiores, reprehenderit adipisci soluta?</li>
-                     -->
                 </ul>
               </div>
             </div>
@@ -188,7 +86,7 @@
         </div>
       </div>
     </div>
-    <!-- Banner Ends Here -->
+    <!-- Banner fini Here -->
 
     <section class="blog-posts grid-system">
       <div class="container">
@@ -289,73 +187,7 @@
       </div>
     </section>
 
-      <!-- 
-
-    <section class="blog-posts grid-system">
-      <div class="container">
-        <div class="all-blog-posts">
-          <h2 class="text-center">Blog</h2>
-          <br>
-          <div class="row">
-            <div class="col-md-4 col-sm-6">
-              <div class="blog-post">
-                <div class="blog-thumb">
-                  <img src="assets/images/blog-1-720x480.jpg" alt="">
-                </div>
-                <div class="down-content">
-                  <a href="blog-details.html"><h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h4></a>
-                  
-                  <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet eleifend.</p>
-
-                  <ul class="post-info">
-                    <li><a href="#">John Doe</a></li>
-                    <li><a href="#">10.07.2020 10:20</a></li>
-                    <li><a href="#"><i class="fa fa-comments" title="Comments"></i> 12</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-              <div class="blog-post">
-                <div class="blog-thumb">
-                  <img src="assets/images/blog-2-720x480.jpg" alt="">
-                </div>
-                <div class="down-content">
-                  <a href="blog-details.html"><h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h4></a>
-                  
-                  <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet eleifend.</p>
-
-                  <ul class="post-info">
-                    <li><a href="#">John Doe</a></li>
-                    <li><a href="#">10.07.2020 10:20</a></li>
-                    <li><a href="#"><i class="fa fa-comments" title="Comments"></i> 12</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-              <div class="blog-post">
-                <div class="blog-thumb">
-                  <img src="assets/images/blog-3-720x480.jpg" alt="">
-                </div>
-                <div class="down-content">
-                  <a href="blog-details.html"><h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h4></a>
-                  
-                  <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet eleifend.</p>
-
-                  <ul class="post-info">
-                    <li><a href="#">John Doe</a></li>
-                    <li><a href="#">10.07.2020 10:20</a></li>
-                    <li><a href="#"><i class="fa fa-comments" title="Comments"></i> 12</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    -->
+     
     <div class="blog-posts">
       <div class="container">
         <div class="sidebar-item comments">

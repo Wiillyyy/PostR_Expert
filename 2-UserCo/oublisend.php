@@ -5,7 +5,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="description" content="LoginClient">
       <meta name="author" content="William">
-      <link type="text/css" rel="stylesheet" href="style.css">
+      <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+      
       <title>Oubli MDP</title>
       <link rel="icon" type="image/png" href="/assets/logo/posterexpertlogo.png">
     </head>
