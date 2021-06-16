@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
 
-    <title>PostR Expert - Contact</title>
+    <title>PostR Expert - Commentaires</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/owl.css">
+
   </head>
 
   <body>
@@ -39,6 +40,7 @@
       <nav class="navbar navbar-expand-lg">
         <div class="container">
           <a class="navbar-brand" href="index.php"><h2>Post<span style="color: #f48840">R</span> Expert<em>.</em></h2></a>
+          <div id="app"><h3>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ ㅤㅤㅤ</h3></div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -46,27 +48,21 @@
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
                 <a class="nav-link" href="index.php">Menu
-                  <span class="sr-only">(current)</span>
                 </a>
               </li> 
+
               <li class="nav-item">
-                <a class="nav-link" href="products.html">Produits</a>
+                <a class="nav-link" href="produit.php">Produits</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="checkout.html">Panier</a>
+                <a class="nav-link" href="panier.php">Panier</a>
               </li>
-                <!--
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Plus</a>
-                  
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="about.html">About Us</a>
-                    <a class="dropdown-item" href="testimonials.html">Testimonials</a>
-                    <a class="dropdown-item" href="terms.html">Terms</a>
-                  </div>-->
-              </li>
+
               <li class="nav-item active">
+                <a class="nav-link" href="panier.php">Avis</a>
+              </li>
+
                 <a class="nav-link" href="/2-UserCo/index.php">Connexion</a>
               </li>
             </ul>
@@ -83,8 +79,8 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="text-content">
-                <h4>contact</h4>
-                <h2>Je savais pas que tu voulais mon num :0</h2>
+                <h4>Avis</h4>
+                <h2>Qu'es-ce que vous avez pensé de nos Posters ?</h2>
               </div>
             </div>
           </div>
@@ -95,87 +91,72 @@
     <!-- Banner Ends Here -->
 
 
-    <section class="contact-us">
+    <div class="blog-posts">
       <div class="container">
-        <div class="row">
-        
-          <div class="col-lg-12">
-            <div class="down-contact">
-              <div class="row">
-                <div class="col-lg-8">
-                  <div class="sidebar-item contact-form">
-                    <div class="sidebar-heading">
-                      <h2>Envoie moi un petit message</h2>
-                    </div>
-                    <div class="content">
-                      <form id="contact" action="" method="post">
-                        <div class="row">
-                          <div class="col-md-6 col-sm-12">
-                            <fieldset>
-                              <input name="name" type="text" id="name" placeholder="Ton nom stp" required="">
-                            </fieldset>
-                          </div>
-                          <div class="col-md-6 col-sm-12">
-                            <fieldset>
-                              <input name="email" type="text" id="email" placeholder="Ton email" required="">
-                            </fieldset>
-                          </div>
-                          <div class="col-md-12 col-sm-12">
-                            <fieldset>
-                              <input name="subject" type="text" id="subject" placeholder="Sujet psk c important">
-                            </fieldset>
-                          </div>
-                          <div class="col-lg-12">
-                            <fieldset>
-                              <textarea name="message" rows="6" id="message" placeholder="Ton Message" required=""></textarea>
-                            </fieldset>
-                          </div>
-                          <div class="col-lg-12">
-                            <fieldset>
-                              <button type="submit" id="form-submit" class="main-button">Envoie moi ce Message</button>
-                            </fieldset>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
+        <div class="sidebar-item comments">
+          <div class="content">
+            <ul>
+              <li>
+                <div class="author-thumb">
+                  <img src="assets/images/comment-author-01.jpg" alt="">
                 </div>
-                <div class="col-lg-4">
-                  <div class="sidebar-item contact-information">
-                    <div class="sidebar-heading">
-                      <h2>contact information</h2>
-                    </div>
-                    <div class="content">
-                      <ul>
-                        <li>
-                          <h5>06 74... nan j'dec</h5>
-                          <span>Mon 06</span>
-                        </li>
-                        <li>
-                          <h5>william.zlojo@synology.com</h5>
-                          <span>Mon mail</span>
-                        </li>
-                        <li>
-                          <h5>Quelle part en France</h5>
-                          <span>Mon addresse</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+                <div class="right-content">
+                  <h4>John Doe<span>10.07.2020</span></h4>
+                  <p>Fusce ornare mollis eros. Duis et diam vitae justo fringilla condimentum eu quis leo. Vestibulum id turpis porttitor sapien facilisis scelerisque. Curabitur a nisl eu lacus convallis eleifend posuere id tellus.</p>
                 </div>
+              </li>
+              <li>
+                <div class="author-thumb">
+                  <img src="assets/images/comment-author-02.jpg" alt="">
+                </div>
+                <div class="right-content">
+                  <h4>Jane Smith<span>10.07.2020</span></h4>
+                  <p>Nullam nec pharetra nibh. Cras tortor nulla, faucibus id tincidunt in, ultrices eget ligula. Sed vitae suscipit ligula. Vestibulum id turpis volutpat, lobortis turpis ac, molestie nibh.</p>
+                </div>
+              </li>
+              <li>
+                <div class="author-thumb">
+                  <img src="assets/images/comment-author-03.jpg" alt="">
+                </div>
+                <div class="right-content">
+                  <h4>Kate Blue<span>10.07.2020</span></h4>
+                  <p>Nullam nec pharetra nibh. Cras tortor nulla, faucibus id tincidunt in, ultrices eget ligula. Sed vitae suscipit ligula. Vestibulum id turpis volutpat, lobortis turpis ac, molestie nibh.</p>
+                </div>
+              </li>
+
+              <li>
+                <div class="author-thumb">
+                  <img src="assets/images/comment-author-01.jpg" alt="">
+                </div>
+                <div class="right-content">
+                  <h4>John Doe<span>10.07.2020</span></h4>
+                  <p>Fusce ornare mollis eros. Duis et diam vitae justo fringilla condimentum eu quis leo. Vestibulum id turpis porttitor sapien facilisis scelerisque. Curabitur a nisl eu lacus convallis eleifend posuere id tellus.</p>
+                </div>
+              </li>
+              <li>
+                <div class="author-thumb">
+                  <img src="assets/images/comment-author-02.jpg" alt="">
+                </div>
+                <div class="right-content">
+                  <h4>Jane Smith<span>10.07.2020</span></h4>
+                  <p>Nullam nec pharetra nibh. Cras tortor nulla, faucibus id tincidunt in, ultrices eget ligula. Sed vitae suscipit ligula. Vestibulum id turpis volutpat, lobortis turpis ac, molestie nibh.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <br>
+        <br>
+        <div class="row justify-content-md-center">
+            <div class="col-md-3">
+              <div class="main-button">
+                <a href="#">Ajouter un commentaire !</a>
               </div>
             </div>
           </div>
-          
-          <div class="col-lg-12">
-            <div id="map">
-              <iframe src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=IUT%20Annecy+(Titre)&amp;ie=UTF8&amp;t=&amp;z=10&amp;iwloc=B&amp;output=embed" width="100%" height="450px" frameborder="0" style="border:0" allowfullscreen></iframe>
-            </div>
-          </div>
-          
-        </div>
       </div>
-    </section>
+    </div>
 
     
     <footer>

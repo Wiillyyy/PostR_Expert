@@ -54,7 +54,7 @@ h1,h2,h3,h4,h5,h6 {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-image: url(../images/banner-image-1-1920x300.jpg);
+	background-image: url(../images/banniere.png);
 }
 
 .page-heading:after {
@@ -90,19 +90,6 @@ h1,h2,h3,h4,h5,h6 {
 	letter-spacing: 0.5px;
 }
 
-
-
-#preloader .jumper {
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  display: block;
-  position: absolute;
-  margin: auto;
-  width: 50px;
-  height: 50px;
-}
 
 #preloader .jumper > div {
   background-color: #fff;
@@ -243,6 +230,7 @@ header .navbar {
 .navbar .navbar-nav .nav-item {
 	margin: 0px 15px;
 }
+
 .navbar .navbar-nav a.nav-link {
 	text-transform: capitalize;
 	font-size: 15px;
@@ -252,10 +240,30 @@ header .navbar {
 	color: #1e1e1e;
 	transition: all 0.3s;
 }
-.navbar .navbar-nav .nav-link:hover,
+
+/* Bouton Connexion */
+
+a.nav-link2 {
+	text-transform: capitalize;
+	font-size: 15px;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	color: #ff0000;
+	transition: all 0.3s;
+}
+.nav-link2 {
+	position: relative;
+	text-align: end;
+	top: 19%;
+}
+
+/* Animation Hover */
+
+.navbar .navbar-nav .nav-link:hover .nav-link2:hover,
 .navbar .navbar-nav .active>.nav-link,
-.navbar .navbar-nav .nav-link.active,
-.navbar .navbar-nav .nav-link.show,
+.navbar .navbar-nav .nav-link.active .nav-link2.active,
+.navbar .navbar-nav .nav-link.show .nav-link2.show
 .navbar .navbar-nav .show>.nav-link {
 	color: #f48840;
 	display: inline-block;
@@ -291,6 +299,10 @@ header .navbar {
 	font-family: 'FontAwesome';
 }
 
+.nav-link {
+	position: relative;
+	text-align: end;
+}
 
 
 /* Banner Style */

@@ -11,13 +11,13 @@
     
     <title>PostR Expert - Menu</title>
 
-    <!-- Script Java POSTR animé -->
+    <!-- Script Java POSTR animé (ne marche pas) -->
     <script type="text/javascript"></script>
 		<script src="https://unpkg.com/typewriter-effect@2.3.1/dist/core.js"></script>
 		<script src="java.js"></script>
     <link rel="icon" type="image/png" href="/assets/logo/posterexpertlogo.png">
 
-    <!-- Fichier Bootstrap (banque d'images/logos) CSS -->
+    <!-- Fichier Bootstrap (banque d'images/logos de couelur) CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
@@ -52,19 +52,18 @@
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
                 <a class="nav-link" href="index.php">Menu
-                  <span class="sr-only">(current)</span>
                 </a>
               </li> 
               <li class="nav-item">
-                <a class="nav-link" href="products.html">Produits</a>
+                <a class="nav-link" href="produit.php">Produits</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="checkout.html">Panier</a>
+                <a class="nav-link" href="panier.php">Panier</a>
               </li>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="2-UserCo/index.php">Connexion</a>
+                <a class="nav-link2" href="2-UserCo/index.php">Connexion</a>
               </li>
             </ul>
           </div>
@@ -97,18 +96,18 @@
             <div class="col-md-4 col-sm-6">
               <div class="blog-post">
                 <div class="blog-thumb">
-                  <img src="assets/images/product-4-720x480.jpg" alt="">
+                  <img src="assets/images/produit-1.png" alt="">
                 </div>
                 <div class="down-content">
                   <span> 19.99 € </span>
-                  <a href="products.html"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
+                  <a href="produit.php"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
                   <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet eleifend.</p>
                   <div class="post-options">
                     <div class="row">
                       <div class="col-lg-12">
                         <ul class="post-tags">
                           <li><i class="fa fa-bullseye"></i></li>
-                          <li><a href="product-details.html">Voir le produit</a></li>
+                          <li><a href="produitdetail.php">Voir le produit</a></li>
                         </ul>
                       </div>
                     </div>
@@ -119,18 +118,18 @@
             <div class="col-md-4 col-sm-6">
               <div class="blog-post">
                 <div class="blog-thumb">
-                  <img src="assets/images/product-5-720x480.jpg" alt="">
+                  <img src="assets/images/produit-2.png" alt="">
                 </div>
                 <div class="down-content">
                   <span> 19.99 € </span>
-                  <a href="products.html"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
+                  <a href="produit.php"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
                   <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet eleifend.</p>
                   <div class="post-options">
                     <div class="row">
                       <div class="col-lg-12">
                         <ul class="post-tags">
                           <li><i class="fa fa-bullseye"></i></li>
-                          <li><a href="product-details.html">Voir le produit</a></li>
+                          <li><a href="produitdetail.php">Voir le produit</a></li>
                         </ul>
                       </div>
                     </div>
@@ -141,18 +140,18 @@
             <div class="col-md-4 col-sm-6">
               <div class="blog-post">
                 <div class="blog-thumb">
-                  <img src="assets/images/product-6-720x480.jpg" alt="">
+                  <img src="assets/images/produit-3.png" alt="">
                 </div>
                 <div class="down-content">
                   <span> 19.99 € </span>
-                  <a href="products.html"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
+                  <a href="produit.php"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
                   <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet eleifend.</p>
                   <div class="post-options">
                     <div class="row">
                       <div class="col-lg-12">
                         <ul class="post-tags">
                           <li><i class="fa fa-bullseye"></i></li>
-                          <li><a href="product-details.html">Voir le produit</a></li>
+                          <li><a href="produitdetail.php">Voir le produit</a></li>
                         </ul>
                       </div>
                     </div>
@@ -164,6 +163,7 @@
         </div>
       </div>
     </section>
+
 
     <section class="call-to-action">
       <div class="container">
@@ -177,7 +177,7 @@
                 </div>
                 <div class="col-lg-4">
                   <div class="main-button">
-                    <a href="contact.html">Me contacter</a>
+                    <a href="contact.php">Me contacter</a>
                   </div>
                 </div>
               </div>
@@ -232,7 +232,7 @@
           <div class="row justify-content-md-center">
             <div class="col-md-3">
               <div class="main-button">
-                <a href="Commentaires.html">En savoir plus</a>
+                <a href="avis.php">En savoir plus</a>
               </div>
             </div>
           </div>
@@ -247,7 +247,7 @@
             <ul class="social-icons">
               <li><a href="https://willydev.xyz/">Mon Site</a></li>
               <li><a href="https://twitter.com/willy_appl">Twitter</a></li>
-              <li><a href="https://github.com/Wiillyyy">Repo du Site</a></li>
+              <li><a href="https://github.com/Wiillyyy/PostR_Expert">Repo du Site</a></li>
               <li><a href="#">Linkedin</a></li>
             </ul>
           </div>

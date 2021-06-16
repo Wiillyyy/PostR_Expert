@@ -39,6 +39,7 @@
       <nav class="navbar navbar-expand-lg">
         <div class="container">
           <a class="navbar-brand" href="index.php"><h2>Post<span style="color: #f48840">R</span> Expert<em>.</em></h2></a>
+          <div id="app"><h3>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ ㅤㅤㅤ</h3></div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -46,15 +47,14 @@
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
                 <a class="nav-link" href="index.php">Menu
-                  <span class="sr-only">(current)</span>
                 </a>
               </li> 
               <li class="nav-item">
-                <a class="nav-link" href="products.html">Produits</a>
+                <a class="nav-link" href="produit.php">Produits</a>
               </li>
 
               <li class="nav-item active">
-                <a class="nav-link" href="checkout.html">Panier</a>
+                <a class="nav-link" href="panier.php">Panier</a>
               </li>
 
  

@@ -40,6 +40,7 @@
       <nav class="navbar navbar-expand-lg">
         <div class="container">
           <a class="navbar-brand" href="index.php"><h2>Post<span style="color: #f48840">R</span> Expert<em>.</em></h2></a>
+          <div id="app"><h3>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ ㅤㅤㅤ</h3></div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -47,7 +48,6 @@
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
                 <a class="nav-link" href="index.php">Menu
-                  <span class="sr-only">(current)</span>
                 </a>
               </li> 
               <li class="nav-item active">
@@ -55,7 +55,7 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="checkout.html">Panier</a>
+                <a class="nav-link" href="panier.php">Panier</a>
               </li>
 
              <!-- <li class="nav-item dropdown">
@@ -102,18 +102,18 @@
             <div class="col-md-4 col-sm-6">
               <div class="blog-post">
                 <div class="blog-thumb">
-                  <img src="assets/images/product-1-720x480.jpg" alt="">
+                  <img src="assets/images/produit-1.png" alt="">
                 </div>
                 <div class="down-content">
                   <span>19,99€</span>
-                  <a href="product-details.html"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
+                  <a href="produitdetail.php"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
                   <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non harum deserunt, obcaecati!</p>
                   <div class="post-options">
                     <div class="row">
                       <div class="col-lg-12">
                         <ul class="post-tags">
                           <li><i class="fa fa-bullseye"></i></li>
-                          <li><a href="product-details.html">Voir le produit</a></li>
+                          <li><a href="produitdetail.php">Voir le produit</a></li>
                         </ul>
                       </div>
                     </div>
@@ -124,18 +124,18 @@
             <div class="col-md-4 col-sm-6">
               <div class="blog-post">
                 <div class="blog-thumb">
-                  <img src="assets/images/product-2-720x480.jpg" alt="">
+                  <img src="assets/images/produit-2.png" alt="">
                 </div>
                 <div class="down-content">
                   <span>19,99€</span>
-                  <a href="product-details.html"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
+                  <a href="produitdetail.php"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
                   <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero in, asperiores iste.</p>
                   <div class="post-options">
                     <div class="row">
                       <div class="col-lg-12">
                         <ul class="post-tags">
                           <li><i class="fa fa-bullseye"></i></li>
-                          <li><a href="product-details.html">Voir le produit</a></li>
+                          <li><a href="produitdetail.php">Voir le produit</a></li>
                         </ul>
                       </div>
                     </div>
@@ -146,18 +146,18 @@
             <div class="col-md-4 col-sm-6">
               <div class="blog-post">
                 <div class="blog-thumb">
-                  <img src="assets/images/product-3-720x480.jpg" alt="">
+                  <img src="assets/images/produit-3.png" alt="">
                 </div>
                 <div class="down-content">
                   <span>19,99€</span>
-                  <a href="product-details.html"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
+                  <a href="produitdetail.php"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
                   <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum vero qui, reprehenderit.</p>
                   <div class="post-options">
                     <div class="row">
                       <div class="col-lg-12">
                         <ul class="post-tags">
                           <li><i class="fa fa-bullseye"></i></li>
-                          <li><a href="product-details.html">Voir le produit</a></li>
+                          <li><a href="produitdetail.php">Voir le produit</a></li>
                         </ul>
                       </div>
                     </div>
@@ -168,18 +168,18 @@
             <div class="col-md-4 col-sm-6">
               <div class="blog-post">
                 <div class="blog-thumb">
-                  <img src="assets/images/product-4-720x480.jpg" alt="">
+                  <img src="assets/images/produit-4.png" alt="">
                 </div>
                 <div class="down-content">
                   <span>19,99€</span>
-                  <a href="product-details.html"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
+                  <a href="produitdetail.php"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
                   <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi totam magni facilis.</p>
                   <div class="post-options">
                     <div class="row">
                       <div class="col-lg-12">
                         <ul class="post-tags">
                           <li><i class="fa fa-bullseye"></i></li>
-                          <li><a href="product-details.html">Voir le produit</a></li>
+                          <li><a href="produitdetail.php">Voir le produit</a></li>
                         </ul>
                       </div>
                     </div>
@@ -190,18 +190,18 @@
             <div class="col-md-4 col-sm-6">
               <div class="blog-post">
                 <div class="blog-thumb">
-                  <img src="assets/images/product-5-720x480.jpg" alt="">
+                  <img src="assets/images/produit-5.png" alt="">
                 </div>
                 <div class="down-content">
                   <span>19,99€</span>
-                  <a href="product-details.html"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
+                  <a href="produitdetail.php"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
                   <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut neque blanditiis, doloremque.</p>
                   <div class="post-options">
                     <div class="row">
                       <div class="col-lg-12">
                         <ul class="post-tags">
                           <li><i class="fa fa-bullseye"></i></li>
-                          <li><a href="product-details.html">Voir le produit</a></li>
+                          <li><a href="produitdetail.php">Voir le produit</a></li>
                         </ul>
                       </div>
                     </div>
@@ -212,18 +212,18 @@
             <div class="col-md-4 col-sm-6">
               <div class="blog-post">
                 <div class="blog-thumb">
-                  <img src="assets/images/product-6-720x480.jpg" alt="">
+                  <img src="assets/images/produit-6.png" alt="">
                 </div>
                 <div class="down-content">
                   <span>19,99€</span>
-                  <a href="product-details.html"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
+                  <a href="produitdetail.php"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
                   <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat sint harum suscipit?</p>
                   <div class="post-options">
                     <div class="row">
                       <div class="col-lg-12">
                         <ul class="post-tags">
                           <li><i class="fa fa-bullseye"></i></li>
-                          <li><a href="product-details.html">Voir le produit</a></li>
+                          <li><a href="produitdetail.php">Voir le produit</a></li>
                         </ul>
                       </div>
                     </div>
