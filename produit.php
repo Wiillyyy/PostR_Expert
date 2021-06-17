@@ -68,7 +68,7 @@
                   </div>-->
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/2-UserCo/index.php">Connexion</a>
+                <a class="nav-link2" href="/2-UserCo/index.php">Connexion</a>
               </li>
             </ul>
           </div>
@@ -106,7 +106,7 @@
                 </div>
                 <div class="down-content">
                   <span>19,99€</span>
-                  <a href="produitdetail.php"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
+                  <a href="produitdetail.php"><h4>Poster héro de dessin animés : Monkey D. Luffy </h4></a>
                   <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non harum deserunt, obcaecati!</p>
                   <div class="post-options">
                     <div class="row">
@@ -128,7 +128,7 @@
                 </div>
                 <div class="down-content">
                   <span>19,99€</span>
-                  <a href="produitdetail.php"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
+                  <a href="produitdetail.php"><h4>Poster de Grande ville : New York sous les rayons de soleil </h4></a>
                   <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero in, asperiores iste.</p>
                   <div class="post-options">
                     <div class="row">
@@ -150,7 +150,7 @@
                 </div>
                 <div class="down-content">
                   <span>19,99€</span>
-                  <a href="produitdetail.php"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
+                  <a href="produitdetail.php"><h4>Poster de Films à grand budget : Stranger Things</h4></a>
                   <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum vero qui, reprehenderit.</p>
                   <div class="post-options">
                     <div class="row">
@@ -172,7 +172,7 @@
                 </div>
                 <div class="down-content">
                   <span>19,99€</span>
-                  <a href="produitdetail.php"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
+                  <a href="produitdetail.php"><h4>Poster Lieu de Tourisme d'été : Lac d'Annecy</h4></a>
                   <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi totam magni facilis.</p>
                   <div class="post-options">
                     <div class="row">
@@ -194,7 +194,7 @@
                 </div>
                 <div class="down-content">
                   <span>19,99€</span>
-                  <a href="produitdetail.php"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
+                  <a href="produitdetail.php"><h4>Poster Jeux Vidéo : Super Mario Bros 3</h4></a>
                   <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut neque blanditiis, doloremque.</p>
                   <div class="post-options">
                     <div class="row">
@@ -216,7 +216,7 @@
                 </div>
                 <div class="down-content">
                   <span>19,99€</span>
-                  <a href="produitdetail.php"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
+                  <a href="produitdetail.php"><h4>Poster Musique Metal : Groupe de musique </h4></a>
                   <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat sint harum suscipit?</p>
                   <div class="post-options">
                     <div class="row">

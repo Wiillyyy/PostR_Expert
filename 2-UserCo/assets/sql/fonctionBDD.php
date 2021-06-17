@@ -2,8 +2,8 @@
 
 
 
-function InscriptionBDD($connex, $leMail, $leMDP) {
-  $sql="INSERT INTO USERS (Email, MDP) VALUES ('".$leMail."', '".$leMDP."');";
+function InscriptionBDD($connex, $leMail, $leMDP, $lePrenom, $leNom) {
+  $sql="INSERT INTO USERS (Email, MDP, prenom, nom) VALUES ('".$leMail."', '".$leMDP."', '".$lePrenom."', '".$leNom."');";
       $resu=$connex->query($sql);
       return $resu;
 }

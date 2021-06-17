@@ -63,7 +63,7 @@
                 <a class="nav-link" href="panier.php">Avis</a>
               </li>
 
-                <a class="nav-link" href="/2-UserCo/index.php">Connexion</a>
+                <a class="nav-link2" href="/2-UserCo/index.php">Connexion</a>
               </li>
             </ul>
           </div>

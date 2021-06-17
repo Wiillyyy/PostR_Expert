@@ -1,32 +1,32 @@
 <?php
 session_start();
-require_once("assets/sql/connexion.php");
+require_once("assets/sql/connexionSilent.php");
 $conn1=connexionBDD();
+ 
+if(isset($_GET['connexion'])) {
+   $idconnect = htmlspecialchars($_GET['idconnect']);
+   $mdpconnect = htmlspecialchars($_GET['mdpconnect']);
 
 
-if(isset($_POST['submit'])){ //Si l'user selectionne le bouton submit execution de la tâche
-    $lePseudo = htmlspecialchars($_POST['p_pseudo']); //Htmlspecialchars permet de convertir au format html des entrées dans des inputs afin de "bloquer" des injections sql par input
-    $leMDP = htmlspecialchars($_POST['p_mdp']);
-
-        if(!empty($lePseudo) && !empty($leMDP)){ //Verification que les informations sont remplies, sinon $erreur pour signaler l'oublie.
-        
-        $requser = $conn1->prepare('SELECT pseudo, mdp FROM ADMINS WHERE pseudo = ? ;');  //On recupere les identifiants de la table admitable et on les compares à celles entrees
-        $requser->execute(array($lePseudo));  //mise en tableau des valeurs
-        $mailexist = $requser->rowCount();
-        if($mailexist == 1){  //Verifie si le mail existe
-
-            $userinfo = $requser->fetch();
-                header("Location: RT/1projet27/1-AdminCo/dashboard.php?id=".$_SESSION['id']);  //Envoie vers le dashboard
-            }else{
-                $erreur = "Mauvais Mail et/ou mot de passe";
-            }
-        }else{ //sinon affichage d'un message erreur
-            $erreur = "Mauvais Mail et/ou mot de passe";
-        }
-    }else{
-        $erreur = "Erreur, veuillez remplir tous les champs !"; //Peut remplacer la fonction required dans HTML.
-    }
-
+   if(!empty($idconnect) AND !empty($mdpconnect)) {
+      $requser = $conn1->prepare("SELECT * FROM ADMIN WHERE pseudo = ? AND mdp = ?");
+      $requser->execute(array($idconnect, $mdpconnect));
+      $userexist = $requser->rowCount();
+      var_dump($requser);
+      var_dump($userexist);
+      
+      if($userexist == 1) {
+         $userinfo = $requser->fetch();
+         $_SESSION['id'] = $userinfo['idadmin'];
+         $_SESSION['pseudo'] = $userinfo['pseudo'];
+         header("Location: dashboardA.php?id=".$_SESSION['id']);
+      } else {
+         $erreur = "Mauvais pseudo ou mot de passe !";
+      }
+   } else {
+      $erreur = "Tous les champs doivent être complétés !";
+   }
+}
 ?>
 
 <!DOCTYPE html>
@@ -57,10 +57,10 @@ if(isset($_POST['submit'])){ //Si l'user selectionne le bouton submit execution 
   
   
       <!-- Section Login -->
-      <form action="" method="POST">
-        <input type="text" id="login" class="fadeIn second" name="p_pseudo" placeholder="Pseudo" required>
-        <input type="password" id="password" class="fadeIn third" name="p_mdp" placeholder="Mot de Passe" required>
-        <input type="submit" class="fadeIn fourth" name="submit" value="Connexion">
+      <form action="" method="GET">
+        <input type="text" id="login" class="fadeIn second" name="idconnect" placeholder="Pseudo" title="Merci de taper le pseudo de l'admin " required>
+        <input type="password" id="password" class="fadeIn third" name="mdpconnect" placeholder="Mot de Passe" pattern="^[a-zA-Z0-9_.-]*$" required>
+        <input type="submit" class="fadeIn fourth" name="connexion" value="connexion">
 
       </form>
 
@@ -70,9 +70,10 @@ if(isset($_POST['submit'])){ //Si l'user selectionne le bouton submit execution 
       </label>
       <h3>Voir le mot de passe</h3>
       <?php
- // tentative de connexion
-    print "Vous êtes Connecté à la base de donnés :)<br />"; // message de debug
-      ?>
+       if(isset($erreur)) {
+        echo '<font color="red">'.$erreur."</font>";
+     } 
+     ?>
   
     </div>
   </div>

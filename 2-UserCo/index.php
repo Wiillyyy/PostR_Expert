@@ -1,3 +1,33 @@
+<?php
+session_start();
+require_once("assets/sql/connexionSilent.php");
+$conn1=connexionBDD();
+ 
+if(isset($_POST['connexion'])) {
+   $mailconnect = htmlspecialchars($_POST['mailconnect']);
+   $mdpconnect = htmlspecialchars($_POST['mdpconnect']);
+
+
+   if(!empty($mailconnect) AND !empty($mdpconnect)) {
+      $requser = $conn1->prepare("SELECT * FROM USERS WHERE email = ? AND mdp = ?");
+      $requser->execute(array($mailconnect, $mdpconnect));
+      $userexist = $requser->rowCount();
+      
+      if($userexist == 1) {
+         $userinfo = $requser->fetch();
+         $_SESSION['id'] = $userinfo['iduser'];
+         $_SESSION['prenom'] = $userinfo['prenom'];
+         $_SESSION['mail'] = $userinfo['Email'];
+         header("Location: dashboard.php?id=".$_SESSION['id']);
+      } else {
+         $erreur = "Mauvais mail ou mot de passe !";
+      }
+   } else {
+      $erreur = "Tous les champs doivent être complétés !";
+   }
+}
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,6 +44,7 @@
   </head>
 
     <body>
+
     <a href="../index.php">
     <p><i class="fleche gauche"></i></p></a>
 
@@ -29,12 +60,25 @@
   
   
       <!-- la section Login -->
-      <form>
-        <input type="text" id="login" class="fadeIn second" name="Email" placeholder="Email">
+      <form method="POST">
 
-        <input type="password" id="password" class="fadeIn third" name="MDP" placeholder="Mot de Passe">
+        <input type="text" id="login" class="fadeIn second" name="mailconnect" placeholder="Email"
+        pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" title="Merci d'entrer un E-mail valide !" required>
 
-        <input type="submit" class="fadeIn fourth" value="Connexion">
+        <input type="password" id="password" class="fadeIn third" name="mdpconnect" placeholder="Mot de Passe" pattern="^[a-zA-Z0-9_.-]*$" 
+        title="Merci d'entrer un MDP sans espace ou caracteres spéciaux"
+        required>
+
+        <input type="submit" class="fadeIn fourth" name="connexion" value="Connexion">
+       
+        
+        <div>
+        <?php
+         if(isset($erreur)) {
+            echo '<font color="red">'.$erreur."</font>";
+         } 
+         ?></div>
+
       </form>
 
       <label class="switch">

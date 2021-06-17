@@ -249,21 +249,30 @@ a.nav-link2 {
 	font-weight: 800;
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
-	color: #ff0000;
+	color: transparent;
+	background: #666666;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	background-clip: text;
+	text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
 	transition: all 0.3s;
+
 }
 .nav-link2 {
 	position: relative;
 	text-align: end;
-	top: 19%;
+	top: 18%;
 }
 
+.nav-link2:hover{
+	color: #d41c1c;
+}
 /* Animation Hover */
 
-.navbar .navbar-nav .nav-link:hover .nav-link2:hover,
+.navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .active>.nav-link,
-.navbar .navbar-nav .nav-link.active .nav-link2.active,
-.navbar .navbar-nav .nav-link.show .nav-link2.show
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link.show
 .navbar .navbar-nav .show>.nav-link {
 	color: #f48840;
 	display: inline-block;
@@ -339,6 +348,10 @@ a.nav-link2 {
 	letter-spacing: 0.5px;
 	text-transform: capitalize;
 	margin: 10px 0px 12px 0px;
+}
+
+.contacth4 {
+	color: #f48840;
 }
 
 .owl-banner .item .item-content ul li {

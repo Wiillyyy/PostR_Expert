@@ -1,3 +1,30 @@
+<?php
+  $dir = 'assets/random';
+  // Initiate array which will contain the image name
+  $imgs_arr = array();
+  // Check if image directory exists
+  if (file_exists($dir) && is_dir($dir) ) {
+    
+      // Get files from the directory
+      $dir_arr = scandir($dir);
+      $arr_files = array_diff($dir_arr, array('.','..') );
+      foreach ($arr_files as $file) {
+        //Get the file path
+        $file_path = $dir."/".$file;
+        // Get extension
+        $ext = pathinfo($file_path, PATHINFO_EXTENSION);
+        if ($ext=="jpg" || $ext=="png" || $ext=="JPG" || $ext=="PNG") {
+          array_push($imgs_arr, $file);
+        }
+        
+      }
+      $count_img_index = count($imgs_arr) - 1;
+      $random_img = $imgs_arr[rand( 2, $count_img_index )];
+      $random_img2 = $imgs_arr[rand( 1, $count_img_index )];
+      $random_img3 = $imgs_arr[rand( 0, $count_img_index )];
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -96,7 +123,7 @@
             <div class="col-md-4 col-sm-6">
               <div class="blog-post">
                 <div class="blog-thumb">
-                  <img src="assets/images/produit-1.png" alt="">
+                  <img src= "<?php echo $dir."/".$random_img ?>" alt="Random 1" />
                 </div>
                 <div class="down-content">
                   <span> 19.99 € </span>
@@ -118,7 +145,7 @@
             <div class="col-md-4 col-sm-6">
               <div class="blog-post">
                 <div class="blog-thumb">
-                  <img src="assets/images/produit-2.png" alt="">
+                  <img src="<?php echo $dir."/".$random_img2 ?>" alt="Random 2" />
                 </div>
                 <div class="down-content">
                   <span> 19.99 € </span>
@@ -140,7 +167,7 @@
             <div class="col-md-4 col-sm-6">
               <div class="blog-post">
                 <div class="blog-thumb">
-                  <img src="assets/images/produit-3.png" alt="">
+                  <img src="<?php echo $dir."/".$random_img3 ?>" alt="Random 3" />
                 </div>
                 <div class="down-content">
                   <span> 19.99 € </span>
@@ -172,8 +199,7 @@
             <div class="main-content">
               <div class="row">
                 <div class="col-lg-8">
-                  <span>Lorem ipsum dolor sit amet.</span>
-                  <h4>Sed doloribus accusantium reiciendis et officiis.</h4>
+                  <span>Une question ? Une envie particulière ?</span>
                 </div>
                 <div class="col-lg-4">
                   <div class="main-button">
