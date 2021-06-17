@@ -4,6 +4,10 @@ require_once("assetsdash/db/fonctionSQL.php");
 require_once("assetsdash/db/connexionSilent.php");
 $conn1=connexionBDD();
 
+if(!isset($_SESSION['pseudo'])) {  //Si un utilisateur malveillant tente de d'acceder via l'url à la page, sans être log, il sera renvoyé a la page 403
+  header('Location: ../error.html');
+}
+
 if(!empty($_GET)){ //Si l'user selectionne le bouton submit execution de la tâche on attribue les variables qu'il a rentré
 
   $titre = htmlspecialchars($_GET['titre']);
@@ -48,7 +52,7 @@ if(!empty($_GET)){ //Si l'user selectionne le bouton submit execution de la tâc
       <a href="gestionCommande.php">Gestion Commandes</a>
       <a href="Commande.php">Commandes</a>
       <a href="fichiers.php">BDD/MCD/Graphe</a>
-      <a style="position: fixed" href="deco.php">Déconnexion</a>
+      <a style="position: fixed" href="../deco.php">Déconnexion</a>
     </nav>
   </header>
   <main class="main">
@@ -105,11 +109,11 @@ if(!empty($_GET)){ //Si l'user selectionne le bouton submit execution de la tâc
 
       <input type="text" id="login"  name="prix" placeholder="Prix (sensible casse)" title="Merci d'entrer prix juste !" required>
 
-      <input type="submit" class="fadeIn fourth" value="Inscription"> </form>
-      <?php $erreur ?> <!--- Affiche une erreur si le poster existe déjà --->
-
-  <div>
-      
+      <input type="submit" class="fadeIn fourth" value="Ajout Poster !"> </form>
+<div>
+  <?php
+      if(isset($erreur)) {
+            echo '<font color="red">'.$erreur."</font>"; } ?> </div>  <!--- Affiche une erreur si le poster existe déjà --->
       </form>
 
   </main>

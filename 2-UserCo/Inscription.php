@@ -69,13 +69,11 @@ if(!empty($_POST)){ //Si l'user selectionne le bouton submit execution de la tâ
       pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" title="Merci d'entrer un E-mail valide !" required>
 
       <input type="password" id="password" class="fadeIn third" name="mdp" placeholder="Mot de Passe" pattern="^[a-zA-Z0-9_.-]*$" title="Merci d'entrer un MDP sans espace ou caracteres spéciaux" 
-      required>
+      required> 
 
       <?php
       if(isset($erreur)) {
-            echo '<font color="red">'.$erreur."</font>";
-         } 
-         ?>
+            echo '<font color="red">'.$erreur."</font>"; } ?>
          
       <input type="submit" class="fadeIn fourth" value="Inscription">
       </form>

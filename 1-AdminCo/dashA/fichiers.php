@@ -1,3 +1,14 @@
+<?php
+session_start();
+require_once("assetsdash/db/fonctionSQL.php");
+require_once("assetsdash/db/connexionSilent.php");
+$conn1=connexionBDD();
+
+if(!isset($_SESSION['pseudo'])) {  //Si un utilisateur malveillant tente de d'acceder via l'url à la page, sans être log, il sera renvoyé a la page 403
+  header('Location: ../error.html');
+}
+?>
+
 <html>
    <head>
       <title>Dashboard Admin</title>
@@ -16,14 +27,14 @@
     <rect y="23" fill="#FFFFFF" width="34" height="4"/> <!-- Dernière -->
 </svg>
       </a>
-      <a href="#" id="close">×</a>
+      <a href="#" id="close">X</a>
       <a href="../dashboardA.php?id=1">Dashboard</a>
       <a href="Client.php">Clients</a>
       <a href="Poster.php">Posters</a>
       <a href="gestionCommande.php">Gestion Commandes</a>
       <a href="Commandes.php">Commandes</a>
       <a href="fichiers.php">BDD/MCD/Graphe()</a>
-      <a style="position: fixed" href="deco.php">Déconnexion</a>
+      <a style="position: fixed" href="../deco.php">Déconnexion</a>
     </nav>
   </header>
   <main class="main">

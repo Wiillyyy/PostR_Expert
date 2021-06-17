@@ -4,6 +4,11 @@ require_once("assetsdash/db/fonctionSQL.php");
 require_once("assetsdash/db/connexionSilent.php");
 $conn1=connexionBDD();
 
+if(!isset($_SESSION['pseudo'])) {  //Si un utilisateur malveillant tente de d'acceder via l'url à la page, sans être log, il sera renvoyé a la page 403
+  header('Location: ../error.html');
+}
+
+
 if(!empty($_GET)){ //Si l'user selectionne le bouton submit execution de la tâche on attribue les variables qu'il a rentré
 
     $nom = htmlspecialchars($_GET['nom']);
@@ -51,7 +56,7 @@ if(!empty($_GET)){ //Si l'user selectionne le bouton submit execution de la tâc
       <a href="gestionCommande.php">Gestion Commandes</a>
       <a href="Commande.php">Commandes</a>
       <a href="fichiers.php">BDD/MCD/Graphe</a>
-      <a style="position: fixed" href="deco.php">Déconnexion</a>
+      <a style="position: fixed" href="../deco.php">Déconnexion</a>
     </nav>
   </header>
   <main class="main">
@@ -118,14 +123,15 @@ if(!empty($_GET)){ //Si l'user selectionne le bouton submit execution de la tâc
 
       <input type="password" id="password" name="mdp" placeholder="Mot de Passe" pattern="^[a-zA-Z0-9_.-]*$" title="Merci d'entrer un MDP sans espace ou caracteres spéciaux" 
       required>
-      <input type="submit" class="fadeIn fourth" value="Inscription"> </form>
-      <?php $erreur ?>
-
-  <div>
+      <input type="submit" class="fadeIn fourth" value="Inscription"> 
       </form>
+
+      <div>
+  <?php
+      if(isset($erreur)) {
+            echo '<font color="red">'.$erreur."</font>"; } ?> </div>  <!--- Affiche une erreur si le Client existe déjà --->
   </main>
 </div>
-
       </div>
    </body>
 </html>

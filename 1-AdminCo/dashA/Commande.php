@@ -4,6 +4,9 @@ require_once("assetsdash/db/fonctionSQL.php");
 require_once("assetsdash/db/connexionSilent.php");
 $conn1=connexionBDD();
 
+if(!isset($_SESSION['pseudo'])) {  //Si un utilisateur malveillant tente de d'acceder via l'url à la page, sans être log, il sera renvoyé a la page 403
+  header('Location: ../error.html');
+}
 
 ?>
 <html>
@@ -31,7 +34,7 @@ $conn1=connexionBDD();
       <a href="gestionCommande.php">Gestion Commandes</a>
       <a href="Commande.php">Commandes()</a>
       <a href="fichiers.php">BDD/MCD/Graphe</a>
-      <a style="position: fixed" href="deco.php">Déconnexion</a>
+      <a style="position: fixed" href="../deco.php">Déconnexion</a>
     </nav>
   </header>
   <main class="main">
