@@ -1,25 +1,25 @@
 <?php
   $dir = 'assets/random';
-  // Initiate array which will contain the image name
+  // Script qui permet de séléctionner aléatoirement des photos parmis un répertoire
   $imgs_arr = array();
-  // Check if image directory exists
+  // Vérifie si le dossier existe
   if (file_exists($dir) && is_dir($dir) ) {
     
-      // Get files from the directory
+      // Prends les fichiers depuis le Dossier 'images'
       $dir_arr = scandir($dir);
       $arr_files = array_diff($dir_arr, array('.','..') );
       foreach ($arr_files as $file) {
-        //Get the file path
+        //Trouve le file path
         $file_path = $dir."/".$file;
-        // Get extension
+        // Prends l'extension, donc doit être obligatoirement de format (jpg png JPG PNG)
         $ext = pathinfo($file_path, PATHINFO_EXTENSION);
         if ($ext=="jpg" || $ext=="png" || $ext=="JPG" || $ext=="PNG") {
           array_push($imgs_arr, $file);
         }
         
       }
-      $count_img_index = count($imgs_arr) - 1;
-      $random_img = $imgs_arr[rand( 2, $count_img_index )];
+      $count_img_index = count($imgs_arr) - 1;                // J'ai remarqué qu'avec une seule fonct. la même image était répétée en boucle, donc pour que  
+      $random_img = $imgs_arr[rand( 2, $count_img_index )];   // chaque image soit différente j'ai changé l'ordre de comptage
       $random_img2 = $imgs_arr[rand( 1, $count_img_index )];
       $random_img3 = $imgs_arr[rand( 0, $count_img_index )];
   }
@@ -45,28 +45,16 @@
     <link rel="icon" type="image/png" href="/assets/logo/posterexpertlogo.png">
 
     <!-- Fichier Bootstrap (banque d'images/logos de couelur) CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/banque.css" rel="stylesheet">
 
 
-    <!-- Fichier 3 CSS principaux -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <!-- Fichier CSS principaux -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
   </head>
 
   <body>
 
-    <!-- ***** Preloader navbar ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>  
-    <!-- ***** -- ***** -->
-
-    <!-- Header -->
+    <!-- le Header (contient la navbar) -->
     <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
@@ -97,8 +85,10 @@
         </div>
       </nav>
     </header>
+    <!-- fin du header-->
 
-    <!-- Contenu de la page Web -->
+    <!-- Contenu de la page Web a partir de maintenant -->
+
     <!-- la Banner commence ici   -->
     <div class="main-banner header-text">
       <div class="container-fluid">
@@ -112,8 +102,9 @@
         </div>
       </div>
     </div>
-    <!-- Banner fini Here -->
+    <!-- Banner fini ici -->
 
+    <!-- la section avec les 3 images random -->
     <section class="blog-posts grid-system">
       <div class="container">
         <div class="all-blog-posts">
@@ -123,12 +114,12 @@
             <div class="col-md-4 col-sm-6">
               <div class="blog-post">
                 <div class="blog-thumb">
-                  <img src= "<?php echo $dir."/".$random_img ?>" alt="Random 1" />
+                  <img src= "<?php echo $dir."/".$random_img ?>" alt="Random 1" /> <!--random image 1 -->
                 </div>
                 <div class="down-content">
                   <span> 19.99 € </span>
-                  <a href="produit.php"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
-                  <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet eleifend.</p>
+                  <a href="produit.php"><h4>Voici le premier poster qui a été aléatoirement choisi pour vous ! </h4></a>
+                  <p>Il est important de se laisser tenter par différents produits d'un site web.</p>
                   <div class="post-options">
                     <div class="row">
                       <div class="col-lg-12">
@@ -145,12 +136,12 @@
             <div class="col-md-4 col-sm-6">
               <div class="blog-post">
                 <div class="blog-thumb">
-                  <img src="<?php echo $dir."/".$random_img2 ?>" alt="Random 2" />
+                  <img src="<?php echo $dir."/".$random_img2 ?>" alt="Random 2" /> <!--random image 2 -->
                 </div>
                 <div class="down-content">
                   <span> 19.99 € </span>
-                  <a href="produit.php"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
-                  <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet eleifend.</p>
+                  <a href="produit.php"><h4>Et voici le deuxième choisi spécialement pour vous !</h4></a>
+                  <p>Voici un exemple parfait de poster qui sont choisis aléatoirement pour cibler le plus de gens.</p>
                   <div class="post-options">
                     <div class="row">
                       <div class="col-lg-12">
@@ -167,12 +158,12 @@
             <div class="col-md-4 col-sm-6">
               <div class="blog-post">
                 <div class="blog-thumb">
-                  <img src="<?php echo $dir."/".$random_img3 ?>" alt="Random 3" />
+                  <img src="<?php echo $dir."/".$random_img3 ?>" alt="Random 3" /> <!--random image 3 -->
                 </div>
                 <div class="down-content">
                   <span> 19.99 € </span>
-                  <a href="produit.php"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
-                  <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet eleifend.</p>
+                  <a href="produit.php"><h4>Et comme nous ne sommes pas des radins, encore un autre. </h4></a>
+                  <p>Car il est important de laisser un vaste choix au consommateur.</p>
                   <div class="post-options">
                     <div class="row">
                       <div class="col-lg-12">
@@ -190,8 +181,9 @@
         </div>
       </div>
     </section>
+    <!-- se termine ici -->
 
-
+     <!--petite section pour la page contact -->
     <section class="call-to-action">
       <div class="container">
         <div class="row">
@@ -212,8 +204,9 @@
         </div>
       </div>
     </section>
+    <!--petite section finie -->
 
-     
+     <!-- quelques commentaires assez drôles -->
     <div class="blog-posts">
       <div class="container">
         <div class="sidebar-item comments">
@@ -224,48 +217,48 @@
             <ul>
               <li>
                 <div class="author-thumb">
-                  <img src="assets/images/comment-author-01.jpg" alt="">
+                  <img src="assets/images/commentaire.jpg" alt="">
                 </div>
                 <div class="right-content">
-                  <h4>Jane Dark<span>25.03.2021</span></h4>
-                  <p>Fusce ornare mollis eros. Duis et diam vitae justo fringilla condimentum eu quis leo. Vestibulum id turpis porttitor sapien facilisis scelerisque. Curabitur a nisl eu lacus convallis eleifend posuere id tellus.</p>
+                  <h4>Clement Perroune<span>25.03.2021</span></h4>
+                  <p>Je suis vraiment fan de ces Posters, j'en ai acheté un que j'ai collé au dessus de mon lit, à mon reveil la premiere chose que je vois c'est le cours de M2 en version Poster et j'adore !</p>
                 </div>
               </li>
               <li>
                 <div class="author-thumb">
-                  <img src="assets/images/comment-author-02.jpg" alt="">
+                  <img src="assets/images/commentaire.jpg" alt="">
                 </div>
                 <div class="right-content">
-                  <h4>Phillipe Risette<span>31.02.2020</span></h4>
-                  <p>Nullam nec pharetra nibh. Cras tortor nulla, faucibus id tincidunt in, ultrices eget ligula. Sed vitae suscipit ligula. Vestibulum id turpis volutpat, lobortis turpis ac, molestie nibh.</p>
+                  <h4>Léo Galazzi<span>31.02.2021</span></h4>
+                  <p>J'ai acheté le poster de Sanji car j'aimais bien les formes de son visage et de ces sourcils, je le trouvais vraiment beau et réaliste, après coup j'ai décidé d'en recommander pour l'accrocher partout dans ma chambre, mais je me suis rendu compte que j'avais acheté tout les stocks </p>
                 </div>
               </li>
               <li>
                 <div class="author-thumb">
-                  <img src="assets/images/comment-author-03.jpg" alt="">
+                  <img src="assets/images/commentaire.jpg" alt="">
                 </div>
                 <div class="right-content">
-                  <h4>Samgrat Lecu<span>20.12.2020</span></h4>
-                  <p>Nullam nec pharetra nibh. Cras tortor nulla, faucibus id tincidunt in, ultrices eget ligula. Sed vitae suscipit ligula. Vestibulum id turpis volutpat, lobortis turpis ac, molestie nibh.</p>
+                  <h4>Evanne Brandier<span>20.12.2020</span></h4>
+                  <p>Déçu, nul, ne recommande absolument pas ce site, aucun poster de bière ou de bouteilles d'alcools, je vais faire une réclamation à l'auteur de ce site c'est moi que vous le dit..</p>
                 </div>
               </li>
             </ul>
           </div>
-
+        <!-- se terminant ici -->
           <br>
           <br>
-        
+        <!-- la suite des commentaires juste ici -->
           <div class="row justify-content-md-center">
             <div class="col-md-3">
               <div class="main-button">
-                <a href="avis.php">En savoir plus</a>
+                <a href="avis.php">Voir plus de commentaires</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
+<!-- le footer a la fin qui contient mes liens et les dernières infos -->
     <footer>
       <div class="container">
         <div class="row">
@@ -274,7 +267,7 @@
               <li><a href="https://willydev.xyz/">Mon Site</a></li>
               <li><a href="https://twitter.com/willy_appl">Twitter</a></li>
               <li><a href="https://github.com/Wiillyyy/PostR_Expert">Repo du Site</a></li>
-              <li><a href="#">Linkedin</a></li>
+              <li><a href="https://fr.linkedin.com/in/william-zlojo-a1b115201">Linkedin</a></li>
             </ul>
           </div>
           <div class="col-lg-12">
@@ -287,28 +280,7 @@
         </div>
       </div>
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Additional Scripts -->
-    <script src="assets/js/custom.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/accordions.js"></script>
-
-    <script language = "text/Javascript"> 
-      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-      function clearField(t){                   //declaring the array outside of the
-      if(! cleared[t.id]){                      // function makes it static and global
-          cleared[t.id] = 1;  // you could use true and false, but that's more typing
-          t.value='';         // with more chance of typos
-          t.style.color='#fff';
-          }
-      }
-    </script>
-
   </body>
 </html>
+<!-- Et voici donc mon index.php -->
+<!-- Merci d'avoir pris le temps d'étudier mon code :D -->

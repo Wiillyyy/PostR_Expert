@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
   <head>
 
@@ -8,18 +8,21 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
-
+    
     <title>PostR Expert - Panier</title>
+
+    <!-- Script Java POSTR animé (ne marche pas) -->
+    <script type="text/javascript"></script>
+	<script src="https://unpkg.com/typewriter-effect@2.3.1/dist/core.js"></script>
+	<script src="java.js"></script>
     <link rel="icon" type="image/png" href="/assets/logo/posterexpertlogo.png">
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fichier Bootstrap (banque d'images/logos de couelur) CSS -->
+    <link href="assets/css/banque.css" rel="stylesheet">
 
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <!-- Fichier CSS principaux -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
   </head>
 
   <body>
@@ -278,16 +281,16 @@
         </div>
       </div>
     </section> -->
-    
+    <!-- le footer a la fin qui contient mes liens et les dernières infos -->
     <footer>
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <ul class="social-icons">
-               <li><a href="https://willydev.xyz/">Mon Site</a></li>
-               <li><a href="https://twitter.com/willy_appl">Twitter</a></li>
-               <li><a href="https://github.com/Wiillyyy">Repo du Site</a></li>
-               <li><a href="#">Linkedin</a></li>
+            <li><a href="https://willydev.xyz/">Mon Site</a></li>
+              <li><a href="https://twitter.com/willy_appl">Twitter</a></li>
+              <li><a href="https://github.com/Wiillyyy/PostR_Expert">Repo du Site</a></li>
+              <li><a href="https://fr.linkedin.com/in/william-zlojo-a1b115201">Linkedin</a></li>
              </ul>
            </div>
            <div class="col-lg-12">
@@ -301,28 +304,7 @@
         </div>
       </div>
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Additional Scripts -->
-    <script src="assets/js/custom.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/accordions.js"></script>
-
-    <script language = "text/Javascript"> 
-      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-      function clearField(t){                   //declaring the array outside of the
-      if(! cleared[t.id]){                      // function makes it static and global
-          cleared[t.id] = 1;  // you could use true and false, but that's more typing
-          t.value='';         // with more chance of typos
-          t.style.color='#fff';
-          }
-      }
-    </script>
-
   </body>
 </html>
+<!-- Et voici donc mon panier.php -->
+<!-- Merci d'avoir pris le temps d'étudier mon code :D -->

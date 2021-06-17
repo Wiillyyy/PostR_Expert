@@ -1,4 +1,6 @@
 <?php
+require_once("assets/pgSQL.php");
+
 	$menuID=1; // forcé à 1 au départ
 
 	if (isset($_GET['id'])) {
@@ -7,12 +9,7 @@
 		$menuID = 1;
 	  }
 
-	// doit afficher la valeur du paramètre reçu 
-	echo "Numéro du menu : ".$menuID;
-
-  $image1 = echo "<img src='assets/random/produit-1.png'>";
-  $image2 = echo "<img src='image_path'>";
-
+  
 ?>
 
 <!DOCTYPE html>
@@ -25,34 +22,26 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    
+    <title>PostR Expert - D. Prdouits</title>
 
-    <title>PostR Expert - Détail</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Script Java POSTR animé (ne marche pas) -->
+    <script type="text/javascript"></script>
+	<script src="https://unpkg.com/typewriter-effect@2.3.1/dist/core.js"></script>
+	<script src="java.js"></script>
     <link rel="icon" type="image/png" href="/assets/logo/posterexpertlogo.png">
 
+    <!-- Fichier Bootstrap (banque d'images/logos de couelur) CSS -->
+    <link href="assets/css/banque.css" rel="stylesheet">
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
+
+    <!-- Fichier CSS principaux -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-
   </head>
 
   <body>
 
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>  
-    <!-- ***** Preloader End ***** -->
-
-    <!-- Header -->
+    <!-- Header et navbar -->
     <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
@@ -83,8 +72,8 @@
       </nav>
     </header>
 
-    <!-- Page Content -->
-    <!-- Banner Starts Here -->
+    <!-- contenu de la page -->
+    <!-- la bannière fumée -->
     <div class="heading-page header-text">
       <section class="page-heading">
         <div class="container">
@@ -92,7 +81,7 @@
             <div class="col-lg-12">
               <div class="text-content">
                 <h4>19.99€</h4>
-                <h2>Lorem ipsum dolor sit amet.</h2>
+                <h2>Voyez dans le détail nos posters.</h2>
               </div>
             </div>
           </div>
@@ -108,12 +97,18 @@
         <div class="row">
           <div class="col-md-7">
             <div>
-              <img src="<?php echo $image1 ?>" alt="" class="img-fluid wc-image">
+            <img src="<?php print ($imageArr[$menuID]); ?>" alt="" class="img-fluid"></a>  <!-- Image en grand qui change en fonction du menuID --> 
             </div>
 
             <br>
 
             <div class="row">
+              <div class="col-sm-4 col-6">
+                <div><a href="produitdetail.php?id=1">
+                  <img src="assets/images/produit-1.png" alt="" class="img-fluid"></a>
+                </div>
+                <br>
+              </div>
               <div class="col-sm-4 col-6">
                 <div><a href="produitdetail.php?id=2">
                   <img src="assets/images/produit-2.png" alt="" class="img-fluid"></a>
@@ -126,13 +121,13 @@
                 </div>
                 <br>
               </div>
+
               <div class="col-sm-4 col-6">
                 <div><a href="produitdetail.php?id=4">
                   <img src="assets/images/produit-4.png" alt="" class="img-fluid"></a>
                 </div>
                 <br>
               </div>
-
               <div class="col-sm-4 col-6">
                 <div><a href="produitdetail.php?id=5">
                   <img src="assets/images/produit-5.png" alt="" class="img-fluid"></a>
@@ -140,12 +135,9 @@
                 <br>
               </div>
               <div class="col-sm-4 col-6">
-                <div><a href="produitdetail.php?id=6">
-                  <img src="assets/images/produit-6.png" alt="" class="img-fluid"></a>
-                </div>
-                <br>
+              <div><a href="produitdetail.php?id=6">
+              <img src="assets/images/produit-6.png" alt="" class="img-fluid"></a>
               </div>
-              <div class="col-sm-4 col-6">
                 <br>
               </div>
             </div>
@@ -160,7 +152,7 @@
               </div>
 
               <div class="content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed velit eveniet quibusdam animi eos, cum! Alias, dicta. Minima repudiandae sequi iste, nostrum! Neque temporibus officiis harum esse aperiam voluptate? Quibusdam.</p>
+                <p><?php print ($texte[$menuID]); ?></p>  <!-- INFORMATION PRODUIT qui change en fonction de menuID--> 
               </div>
             </div>
 
@@ -224,15 +216,7 @@
           </div>
 
           <div class="content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia doloremque sit, enim sint odio corporis illum perferendis, unde repellendus aut dolore doloribus minima qui ullam vel possimus magnam ipsa deleniti.</p>
-
-            <br>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ducimus ab numquam magnam aliquid, odit provident consectetur corporis eius blanditiis alias nulla commodi qui voluptatibus laudantium quaerat tempore possimus esse nam sed accusantium inventore? Sapiente minima dicta sed quia sunt?</p>
-
-            <br>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum qui, corrupti consequuntur. Officia consectetur error amet debitis esse minus quasi, dicta suscipit tempora, natus, vitae voluptatem quae libero. Sunt nulla culpa impedit! Aliquid cupiditate, impedit reiciendis dolores, illo adipisci, omnis dolor distinctio voluptas expedita maxime officiis maiores cumque sequi quaerat culpa blanditiis. Quia tenetur distinctio rem, quibusdam officiis voluptatum neque!</p>
+          <p><?php print ($info[$menuID]); ?></p> <!-- DESCRIPTION PRODUIT qui change en fonction de menuID-->
           </div>
 
           <br>
@@ -240,16 +224,16 @@
         </div>
       </div>
     </div>
-
+<!-- le footer a la fin qui contient mes liens et les dernières infos -->
     <footer>
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <ul class="social-icons">
-              <li><a href="https://willydev.xyz/">Mon Site</a></li>
+            <li><a href="https://willydev.xyz/">Mon Site</a></li>
               <li><a href="https://twitter.com/willy_appl">Twitter</a></li>
-              <li><a href="https://github.com/Wiillyyy">Repo du Site</a></li>
-              <li><a href="#">Linkedin</a></li>
+              <li><a href="https://github.com/Wiillyyy/PostR_Expert">Repo du Site</a></li>
+              <li><a href="https://fr.linkedin.com/in/william-zlojo-a1b115201">Linkedin</a></li>
             </ul>
           </div>
           <div class="col-lg-12">
@@ -263,28 +247,7 @@
         </div>
       </div>
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Additional Scripts -->
-    <script src="assets/js/custom.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/accordions.js"></script>
-
-    <script language = "text/Javascript"> 
-      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-      function clearField(t){                   //declaring the array outside of the
-      if(! cleared[t.id]){                      // function makes it static and global
-          cleared[t.id] = 1;  // you could use true and false, but that's more typing
-          t.value='';         // with more chance of typos
-          t.style.color='#fff';
-          }
-      }
-    </script>
-
   </body>
 </html>
+<!-- Et voici donc mon produitdetail.php -->
+<!-- Merci d'avoir pris le temps d'étudier mon code :D -->

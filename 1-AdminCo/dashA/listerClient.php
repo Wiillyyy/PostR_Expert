@@ -1,22 +1,14 @@
 <?php
 session_start();
-require_once("assets/sql/connexion.php");
+require_once("../assets/sql/connexion.php");
 $conn1=connexionBDD();
 
-if(!isset($_SESSION['pseudo'])) {  //Si un utilisateur malveillant tente de d'acceder via l'url à la page, sans être log, il sera renvoyé a la page 403
-   header('Location: error.html');
-}
 
-if(isset($_GET['id']) AND $_GET['id'] > 0) {
-   $getid = intval($_GET['id']);
-   $requser = $conn1->prepare('SELECT * FROM ADMINS WHERE idadmin = ?');
-   $requser->execute(array($getid));
-   $userinfo = $requser->fetch();
 ?>
 <html>
    <head>
       <title>Dashboard Admin</title>
-      <link type="text/css" rel="stylesheet" href="assets/css/dashboard.css">
+      <link type="text/css" rel="stylesheet" href="assetsdash/list.css">
       <script src="assets/js/jsquery.js"></script>
       <meta charset="utf-8">
    </head>
@@ -32,8 +24,8 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 </svg>
       </a>
       <a href="#" id="close">×</a>
-      <h1><a href="#">Dashboard()</a></h1>
-      <a href="dashA/listerClient.php">Lister Client</a>
+      <h1><a href="../dashboardA.php">Dashboard</a></h1>
+      <a href="#">Lister Client()</a>
       <a href="#">Lister Posters</a>
       <a href="#">Gestion Commandes</a>
       <a href="#">Graphe</a>
@@ -42,15 +34,16 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
   </header>
   <main class="main">
   <h1>Bienvenue <?php echo $userinfo['pseudo']; ?> !</h1>
-    <h2> Quelques Chiffres :</h2>
    
-    <h1>Nombres de ..</h1>
+    <h1>Lister tout les Client de la base de donnés :</b></h1>
 
-    <p>Contenu 2</p>
-
-    <h1>Franklin Gothic</h1>
-
-    <p>Franklin Gothic est une police d’écriture sans serif réaliste dessinée par Morris Fuller Benton en 1902 pour l’American Type Founders. Elle est complétée au fil des années en une famille de polices de caractères large et polyvalente.</p>
+    <div class="wrapper fadeInDown">
+    <div id="formContent">
+	<form>
+      <h2 class="active"> Liste des clients </h2> <br />
+      
+  <div>
+      </form>
 
   </main>
 </div>
@@ -58,6 +51,3 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
       </div>
    </body>
 </html>
-<?php   
-}
-?>

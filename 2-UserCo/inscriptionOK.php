@@ -1,7 +1,7 @@
 <?php
 require_once("assets/sql/connexionSilent.php");
 $conn1=connexionBDD();
-require_once("assets/sql/fonctionBDD.php");
+require_once("assets/sql/fonctionSQL.php");
 
 if(isset($_POST['submit'])){
   header("Location : /RT/1projet27/index.php");

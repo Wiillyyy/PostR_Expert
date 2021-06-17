@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
   <head>
 
@@ -8,34 +8,26 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    
+    <title>PostR Expert - Avis</title>
 
-    <title>PostR Expert - Commentaires</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Script Java POSTR animé (ne marche pas) -->
+    <script type="text/javascript"></script>
+		<script src="https://unpkg.com/typewriter-effect@2.3.1/dist/core.js"></script>
+		<script src="java.js"></script>
     <link rel="icon" type="image/png" href="/assets/logo/posterexpertlogo.png">
 
+    <!-- Fichier Bootstrap (banque d'images/logos de couelur) CSS -->
+    <link href="assets/css/banque.css" rel="stylesheet">
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
+
+    <!-- Fichier CSS principaux -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-
   </head>
 
+
   <body>
-
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>  
-    <!-- ***** Preloader End ***** -->
-
-    <!-- Header -->
+    <!-- Le header -->
     <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
@@ -62,7 +54,7 @@
               <li class="nav-item active">
                 <a class="nav-link" href="panier.php">Avis</a>
               </li>
-
+              <li class="nav-item active">
                 <a class="nav-link2" href="2-UserCo/index.php">Connexion</a>
               </li>
             </ul>
@@ -71,8 +63,8 @@
       </nav>
     </header>
 
-    <!-- Page Content -->
-    <!-- Banner Starts Here -->
+    <!-- début de la page ici -->
+    <!-- la bannière fumée noir pour assombrir -->
     <div class="heading-page header-text">
       <section class="page-heading">
         <div class="container">
@@ -80,7 +72,7 @@
             <div class="col-lg-12">
               <div class="text-content">
                 <h4>Avis</h4>
-                <h2>Qu'es-ce que vous avez pensé de nos Posters ?</h2>
+                <h2>Qu'avez vous pensé de nos Posters ?</h2>
               </div>
             </div>
           </div>
@@ -88,9 +80,9 @@
       </section>
     </div>
     
-    <!-- Banner Ends Here -->
+    <!-- fin de bannière -->
 
-
+    <!-- les commentaires drôles -->
     <div class="blog-posts">
       <div class="container">
         <div class="sidebar-item comments">
@@ -98,67 +90,96 @@
             <ul>
               <li>
                 <div class="author-thumb">
-                  <img src="assets/images/comment-author-01.jpg" alt="">
+                <img src="assets/images/commentaire.jpg" alt="">
                 </div>
                 <div class="right-content">
-                  <h4>John Doe<span>10.07.2020</span></h4>
-                  <p>Fusce ornare mollis eros. Duis et diam vitae justo fringilla condimentum eu quis leo. Vestibulum id turpis porttitor sapien facilisis scelerisque. Curabitur a nisl eu lacus convallis eleifend posuere id tellus.</p>
+                <h4>Clement Perroune<span>25.03.2021</span></h4>
+                <p>Je suis vraiment fan de ces Posters, j'en ai acheté un que j'ai collé au dessus de mon lit, à mon reveil la premiere chose que je vois c'est le cours de M2 en version Poster et j'adore !</p>
                 </div>
               </li>
               <li>
                 <div class="author-thumb">
-                  <img src="assets/images/comment-author-02.jpg" alt="">
+                <img src="assets/images/commentaire.jpg" alt="">
                 </div>
                 <div class="right-content">
-                  <h4>Jane Smith<span>10.07.2020</span></h4>
-                  <p>Nullam nec pharetra nibh. Cras tortor nulla, faucibus id tincidunt in, ultrices eget ligula. Sed vitae suscipit ligula. Vestibulum id turpis volutpat, lobortis turpis ac, molestie nibh.</p>
+                <h4>Léo Galazzi<span>31.02.2021</span></h4>
+                <p>J'ai acheté le poster de Sanji car j'aimais bien les formes de son visage et de ces sourcils, je le trouvais vraiment beau et réaliste, après coup j'ai décidé d'en recommander pour l'accrocher partout dans ma chambre, mais je me suis rendu compte que j'avais acheté tout les stocks </p>
                 </div>
               </li>
               <li>
                 <div class="author-thumb">
-                  <img src="assets/images/comment-author-03.jpg" alt="">
+                <img src="assets/images/commentaire.jpg" alt="">
                 </div>
                 <div class="right-content">
-                  <h4>Kate Blue<span>10.07.2020</span></h4>
-                  <p>Nullam nec pharetra nibh. Cras tortor nulla, faucibus id tincidunt in, ultrices eget ligula. Sed vitae suscipit ligula. Vestibulum id turpis volutpat, lobortis turpis ac, molestie nibh.</p>
+                <h4>Evanne Brandier<span>20.12.2020</span></h4>
+                <p>Déçu, nul, ne recommande absolument pas ce site, aucun poster de bière ou de bouteilles d'alcools, je vais faire une réclamation à l'auteur de ce site c'est moi que vous le dit..</p>
                 </div>
               </li>
 
               <li>
                 <div class="author-thumb">
-                  <img src="assets/images/comment-author-01.jpg" alt="">
+                <img src="assets/images/commentaire.jpg" alt="">
                 </div>
                 <div class="right-content">
-                  <h4>John Doe<span>10.07.2020</span></h4>
-                  <p>Fusce ornare mollis eros. Duis et diam vitae justo fringilla condimentum eu quis leo. Vestibulum id turpis porttitor sapien facilisis scelerisque. Curabitur a nisl eu lacus convallis eleifend posuere id tellus.</p>
+                  <h4>Rafael Chien<span>12.07.2020</span></h4>
+                  <p>Arnaque ! J'ai acheté le poster en Metal pour essayer de miner du bitcoin mais je ne comprends pas cela ne marche pas, je demande immédiatement un remboursement.</p>
                 </div>
               </li>
               <li>
                 <div class="author-thumb">
-                  <img src="assets/images/comment-author-02.jpg" alt="">
+                <img src="assets/images/commentaire.jpg" alt="">
                 </div>
                 <div class="right-content">
-                  <h4>Jane Smith<span>10.07.2020</span></h4>
-                  <p>Nullam nec pharetra nibh. Cras tortor nulla, faucibus id tincidunt in, ultrices eget ligula. Sed vitae suscipit ligula. Vestibulum id turpis volutpat, lobortis turpis ac, molestie nibh.</p>
+                  <h4>Artur Résistant<span>05.07.2020</span></h4>
+                  <p>J'aime bien le design du poster de Luffy, étant un grand fan de One Pièce je l'ai accroché dans mon salon et je le regarde avant de lancer un nouvel épisode ! </p>
+                </div>
+              </li>
+              <li>
+                <div class="author-thumb">
+                <img src="assets/images/commentaire.jpg" alt="">
+                </div>
+                <div class="right-content">
+                  <h4>Stéphanie Perier<span>??.??.20??</span></h4>
+                  <p>Grâce à mes connaissances de H4C3R, lors de mon achat je me suis retrouvé redirigé vers la page d'administration, je suis donc Super Admin ! </p>
                 </div>
               </li>
             </ul>
           </div>
         </div>
-
+        <!-- fin des commentaires -->
         <br>
         <br>
-        <div class="row justify-content-md-center">
+        <div class="row justify-content-md-center"> <!-- Prototype de commentaires !! NE MARCHE PAS !! -->
             <div class="col-md-3">
               <div class="main-button">
                 <a href="#">Ajouter un commentaire !</a>
+                <div class="content">
+
+                      <form id="contact" action="" method="POST">
+                        <div class="row">
+                          <div class="col-md-6 col-sm-12">
+                            <fieldset>
+                              <input name="name" type="text" id="name" placeholder="Prénom et Nom" required>
+                            </fieldset>
+                          </div>
+                          <div class="col-lg-12">
+                            <fieldset>
+                              <textarea name="message" rows="6" id="commentaire" placeholder="Ton Commentaire" required=></textarea>
+                            </fieldset>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
       </div>
     </div>
+    <!-- fin de page -->
 
-    
+    <!-- le footer a la fin qui contient mes liens et les dernières infos -->
     <footer>
       <div class="container">
         <div class="row">
@@ -166,8 +187,8 @@
             <ul class="social-icons">
               <li><a href="https://willydev.xyz/">Mon Site</a></li>
               <li><a href="https://twitter.com/willy_appl">Twitter</a></li>
-              <li><a href="https://github.com/Wiillyyy">Repo du Site</a></li>
-              <li><a href="#">Linkedin</a></li>
+              <li><a href="https://github.com/Wiillyyy/PostR_Expert">Repo du Site</a></li>
+              <li><a href="https://fr.linkedin.com/in/william-zlojo-a1b115201">Linkedin</a></li>
             </ul>
           </div>
           <div class="col-lg-12">
@@ -181,28 +202,7 @@
         </div>
       </div>
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Additional Scripts -->
-    <script src="assets/js/custom.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/accordions.js"></script>
-
-    <script language = "text/Javascript"> 
-      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-      function clearField(t){                   //declaring the array outside of the
-      if(! cleared[t.id]){                      // function makes it static and global
-          cleared[t.id] = 1;  // you could use true and false, but that's more typing
-          t.value='';         // with more chance of typos
-          t.style.color='#fff';
-          }
-      }
-    </script>
-
   </body>
 </html>
+<!-- Et voici donc mon avis.php -->
+<!-- Merci d'avoir pris le temps d'étudier mon code :D -->

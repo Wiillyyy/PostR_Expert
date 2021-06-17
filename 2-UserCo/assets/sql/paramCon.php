@@ -1,7 +1,7 @@
 <?php
 // information sur les parametres de connexion a la base de données SQL
 //----------------------------------------------------
-  // :
+
 $user="rt1projet27";
 $pass="Ez1dIq";
 $dbname="rt1projet27";

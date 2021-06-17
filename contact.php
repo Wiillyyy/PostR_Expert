@@ -1,7 +1,7 @@
 <?php
 
-$erreurs = [];
-$errorMessage = '';
+$erreurs = [];  // tentative d'envoi mail mais ne fonctionne PAS ENCORE !!!!!
+$errorMessage = ''; 
 
 if (!empty($_POST)) {
    $name = $_POST['name'];
@@ -43,7 +43,7 @@ if (!empty($_POST)) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
   <head>
 
@@ -52,33 +52,26 @@ if (!empty($_POST)) {
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
-
+    
     <title>PostR Expert - Contact</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Script Java POSTR animé (ne marche pas) -->
+    <script type="text/javascript"></script>
+		<script src="https://unpkg.com/typewriter-effect@2.3.1/dist/core.js"></script>
+		<script src="java.js"></script>
     <link rel="icon" type="image/png" href="/assets/logo/posterexpertlogo.png">
 
+    <!-- Fichier Bootstrap (banque d'images/logos de couelur) CSS -->
+    <link href="assets/css/banque.css" rel="stylesheet">
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
+
+    <!-- Fichier CSS principaux -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
   </head>
 
   <body>
 
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>  
-    <!-- ***** Preloader End ***** -->
-
-    <!-- Header -->
+    <!-- header et la navbar -->
     <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
@@ -112,15 +105,15 @@ if (!empty($_POST)) {
       </nav>
     </header>
 
-    <!-- Page Content -->
-    <!-- Banner Starts Here -->
+    <!-- contenu de la page -->
+    <!-- début de banière fumée ici -->
     <div class="heading-page header-text">
       <section class="page-heading">
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
               <div class="text-content">
-                <h4>contact</h4>
+                <h4>Contact</h4>
                 <h2>Un beau formulaire de contact</h2>
               </div>
             </div>
@@ -129,7 +122,7 @@ if (!empty($_POST)) {
       </section>
     </div>
     
-    <!-- Banner Ends Here -->
+    <!-- fin de bannière -->
     <?php
     $allErrors ?>
     <section class="contact-us">
@@ -180,9 +173,9 @@ if (!empty($_POST)) {
                 <div class="col-lg-4">
                   <div class="sidebar-item contact-information">
                     <div class="sidebar-heading">
-                      <h2>cContact</h2>
+                      <h2>Contact</h2>
                     </div>
-                    <div class="content">
+                    <div class="content"> <!--iframe google maps qui affiche la localisation de l'iut d'annecy -->
                       <ul>
                         <li>
                           <h5>06 74 XX XX XX</h5>
@@ -203,7 +196,7 @@ if (!empty($_POST)) {
               </div>
             </div>
           </div>
-          
+          <!--iframe google maps qui affiche la localisation de l'iut d'annecy -->
           <div class="col-lg-12">
             <div id="map">
               <iframe src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=IUT%20Annecy+(Titre)&amp;ie=UTF8&amp;t=&amp;z=10&amp;iwloc=B&amp;output=embed" width="100%" height="450px" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -214,16 +207,16 @@ if (!empty($_POST)) {
       </div>
     </section>
 
-    
+    <!-- le footer a la fin qui contient mes liens et les dernières infos -->
     <footer>
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <ul class="social-icons">
-              <li><a href="https://willydev.xyz/">Mon Site</a></li>
+            <li><a href="https://willydev.xyz/">Mon Site</a></li>
               <li><a href="https://twitter.com/willy_appl">Twitter</a></li>
-              <li><a href="https://github.com/Wiillyyy">Repo du Site</a></li>
-              <li><a href="#">Linkedin</a></li>
+              <li><a href="https://github.com/Wiillyyy/PostR_Expert">Repo du Site</a></li>
+              <li><a href="https://fr.linkedin.com/in/william-zlojo-a1b115201">Linkedin</a></li>
             </ul>
           </div>
           <div class="col-lg-12">
@@ -237,28 +230,7 @@ if (!empty($_POST)) {
         </div>
       </div>
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Additional Scripts -->
-    <script src="assets/js/custom.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/accordions.js"></script>
-
-    <script language = "text/Javascript"> 
-      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-      function clearField(t){                   //declaring the array outside of the
-      if(! cleared[t.id]){                      // function makes it static and global
-          cleared[t.id] = 1;  // you could use true and false, but that's more typing
-          t.value='';         // with more chance of typos
-          t.style.color='#fff';
-          }
-      }
-    </script>
-
   </body>
 </html>
+<!-- Et voici donc mon contact.php -->
+<!-- Merci d'avoir pris le temps d'étudier mon code :D -->

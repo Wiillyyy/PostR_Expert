@@ -1,5 +1,9 @@
+<?php
+require_once("assets/pgSQL.php");  // pour inserer les infos des poster précédemments crées
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
   <head>
 
@@ -8,19 +12,21 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    
+    <title>PostR Expert - Prdouits</title>
 
-    <title>PostR Expert - Posters</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
+    <!-- Script Java POSTR animé (ne marche pas) -->
+    <script type="text/javascript"></script>
+	<script src="https://unpkg.com/typewriter-effect@2.3.1/dist/core.js"></script>
+	<script src="java.js"></script>
     <link rel="icon" type="image/png" href="/assets/logo/posterexpertlogo.png">
 
+    <!-- Fichier Bootstrap (banque d'images/logos de couelur) CSS -->
+    <link href="assets/css/banque.css" rel="stylesheet">
+
+
+    <!-- Fichier CSS principaux -->
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
 
   <body>
@@ -57,15 +63,6 @@
               <li class="nav-item">
                 <a class="nav-link" href="panier.php">Panier</a>
               </li>
-
-             <!-- <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Plus</a>
-                  
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="about.html">A Propos</a>
-                    <a class="dropdown-item" href="testimonials.html">Testimonials</a>
-                    <a class="dropdown-item" href="terms.html">Terms</a>
-                  </div>-->
               </li>
               <li class="nav-item">
                 <a class="nav-link2" href="2-UserCo/index.php">Connexion</a>
@@ -106,8 +103,8 @@
                 </div>
                 <div class="down-content">
                   <span>19,99€</span>
-                  <a href="produitdetail.php"><h4>Poster héro de dessin animés : Monkey D. Luffy </h4></a>
-                  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non harum deserunt, obcaecati!</p>
+                  <a href="produitdetail.php"><h4>Poster héro de dessin animés : Monkey D. Luffy</h4></a>
+                  <p><?php print ($texte[1]); ?></p>
                   <div class="post-options">
                     <div class="row">
                       <div class="col-lg-12">
@@ -128,8 +125,8 @@
                 </div>
                 <div class="down-content">
                   <span>19,99€</span>
-                  <a href="produitdetail.php"><h4>Poster de Grande ville : New York sous les rayons de soleil </h4></a>
-                  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero in, asperiores iste.</p>
+                  <a href="produitdetail.php"><h4>Poster de Grande ville : New York sous les rayons de soleil</h4></a>
+                  <p><?php print ($texte[2]); ?></p>
                   <div class="post-options">
                     <div class="row">
                       <div class="col-lg-12">
@@ -151,7 +148,7 @@
                 <div class="down-content">
                   <span>19,99€</span>
                   <a href="produitdetail.php"><h4>Poster de Films à grand budget : Stranger Things</h4></a>
-                  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum vero qui, reprehenderit.</p>
+                  <p><?php print ($texte[3]); ?></p>
                   <div class="post-options">
                     <div class="row">
                       <div class="col-lg-12">
@@ -173,7 +170,7 @@
                 <div class="down-content">
                   <span>19,99€</span>
                   <a href="produitdetail.php"><h4>Poster Lieu de Tourisme d'été : Lac d'Annecy</h4></a>
-                  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi totam magni facilis.</p>
+                  <p><?php print ($texte[4]); ?></p>
                   <div class="post-options">
                     <div class="row">
                       <div class="col-lg-12">
@@ -195,7 +192,7 @@
                 <div class="down-content">
                   <span>19,99€</span>
                   <a href="produitdetail.php"><h4>Poster Jeux Vidéo : Super Mario Bros 3</h4></a>
-                  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut neque blanditiis, doloremque.</p>
+                  <p><?php print ($texte[5]); ?></p>
                   <div class="post-options">
                     <div class="row">
                       <div class="col-lg-12">
@@ -217,7 +214,7 @@
                 <div class="down-content">
                   <span>19,99€</span>
                   <a href="produitdetail.php"><h4>Poster Musique Metal : Groupe de musique </h4></a>
-                  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat sint harum suscipit?</p>
+                  <p><?php print ($texte[6]); ?></p>
                   <div class="post-options">
                     <div class="row">
                       <div class="col-lg-12">
@@ -236,16 +233,16 @@
       </div>
     </section>
 
-    
+    <!-- le footer a la fin qui contient mes liens et les dernières infos -->
     <footer>
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <ul class="social-icons">
-              <li><a href="https://willydev.xyz/">Mon Site</a></li>
+            <li><a href="https://willydev.xyz/">Mon Site</a></li>
               <li><a href="https://twitter.com/willy_appl">Twitter</a></li>
-              <li><a href="https://github.com/Wiillyyy">Repo du Site</a></li>
-              <li><a href="#">Linkedin</a></li>
+              <li><a href="https://github.com/Wiillyyy/PostR_Expert">Repo du Site</a></li>
+              <li><a href="https://fr.linkedin.com/in/william-zlojo-a1b115201">Linkedin</a></li>
             </ul>
           </div>
           <div class="col-lg-12">
@@ -261,27 +258,7 @@
       </div>
     </footer>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Additional Scripts -->
-    <script src="assets/js/custom.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/accordions.js"></script>
-
-    <script language = "text/Javascript"> 
-      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-      function clearField(t){                   //declaring the array outside of the
-      if(! cleared[t.id]){                      // function makes it static and global
-          cleared[t.id] = 1;  // you could use true and false, but that's more typing
-          t.value='';         // with more chance of typos
-          t.style.color='#fff';
-          }
-      }
-    </script>
-
   </body>
 </html>
+<!-- Et voici donc mon produit.php -->
+<!-- Merci d'avoir pris le temps d'étudier mon code :D -->

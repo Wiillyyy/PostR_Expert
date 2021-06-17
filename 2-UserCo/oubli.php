@@ -31,9 +31,11 @@
   
     
       <!-- Login Form -->
-      <form>
+      <form metod>
       <h3>Entrez l'email</h3>
-      <input type="text" id="login" class="fadeIn second" name="Email" placeholder="Email">
+      <input type="text" id="login" class="fadeIn second" name="email" placeholder="Email" 
+      pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" title="Merci d'entrer un E-mail valide !" required>
+
       <a href="oublisend.php">
         <input type="submit" onclick="oublisend.php" class="fadeIn fourth" value="Envoyer le mot de passe" href="oublisend.php">
       </a>

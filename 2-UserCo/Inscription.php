@@ -2,7 +2,7 @@
 session_start();
 require_once("assets/sql/connexionSilent.php");
 $conn1=connexionBDD();
-require_once("assets/sql/fonctionBDD.php");
+require_once("assets/sql/fonctionSQL.php");
 
 if(!empty($_POST)){ //Si l'user selectionne le bouton submit execution de la tâche on attribue les variables qu'il a rentré
 

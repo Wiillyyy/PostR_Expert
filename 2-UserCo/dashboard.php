@@ -6,12 +6,12 @@ require_once("assets/sql/connexion.php");
 $conn1=connexionBDD();
  
 if(!isset($_SESSION['prenom'])) {  //Si l'user tente de d'acceder via l'url à la page, sans être log, il sera renvoyé a la page 403
-    header('Location: error.html');
+    header('Location: error.html'); // envoi  vers erreur
 }
 
-if(isset($_GET['id']) AND $_GET['id'] > 0) {
+if(isset($_GET['id']) AND $_GET['id'] > 0) {  // on choppe l'id de la session précédente 
    $getid = intval($_GET['id']);
-   $requser = $conn1->prepare('SELECT * FROM USERS WHERE iduser = ?');
+   $requser = $conn1->prepare('SELECT * FROM USERS WHERE iduser = ?');  // on prends toutes les depuis la BDD concercant les infos de l'user par rapport a son ID 
    $requser->execute(array($getid));
    $userinfo = $requser->fetch();
 }
