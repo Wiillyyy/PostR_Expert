@@ -9,11 +9,9 @@ if(isset($_GET['connexion'])) {
 
 
    if(!empty($idconnect) AND !empty($mdpconnect)) {
-      $requser = $conn1->prepare("SELECT * FROM ADMIN WHERE pseudo = ? AND mdp = ?");
+      $requser = $conn1->prepare("SELECT * FROM ADMINS WHERE pseudo = ? AND mdp = ?");
       $requser->execute(array($idconnect, $mdpconnect));
       $userexist = $requser->rowCount();
-      var_dump($requser);
-      var_dump($userexist);
       
       if($userexist == 1) {
          $userinfo = $requser->fetch();

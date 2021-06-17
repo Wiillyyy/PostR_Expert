@@ -1,5 +1,22 @@
+<?php
+	$menuID=1; // forcé à 1 au départ
+
+	if (isset($_GET['id'])) {
+		$menuID = $_GET['id'];
+	  } else {
+		$menuID = 1;
+	  }
+
+	// doit afficher la valeur du paramètre reçu 
+	echo "Numéro du menu : ".$menuID;
+
+  $image1 = echo "<img src='assets/random/produit-1.png'>";
+  $image2 = echo "<img src='image_path'>";
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
   <head>
 
@@ -58,7 +75,7 @@
                 <a class="nav-link" href="panier.php">Panier</a>
 
               <li class="nav-item">
-                <a class="nav-link2" href="/2-UserCo/index.php">Connexion</a>
+                <a class="nav-link2" href="2-UserCo/index.php">Connexion</a>
               </li>
             </ul>
           </div>
@@ -83,47 +100,48 @@
       </section>
     </div>
     
-    <!-- Banner Ends Here -->
+    <!-- Banière se termine ici -->
 
+    
     <section class="blog-posts grid-system">
       <div class="container">
         <div class="row">
           <div class="col-md-7">
             <div>
-              <img src="assets/images/produit-1.png" alt="" class="img-fluid wc-image">
+              <img src="<?php echo $image1 ?>" alt="" class="img-fluid wc-image">
             </div>
 
             <br>
 
             <div class="row">
               <div class="col-sm-4 col-6">
-                <div>
-                  <img src="assets/images/produit-2.png" alt="" class="img-fluid">
+                <div><a href="produitdetail.php?id=2">
+                  <img src="assets/images/produit-2.png" alt="" class="img-fluid"></a>
                 </div>
                 <br>
               </div>
               <div class="col-sm-4 col-6">
-                <div>
-                  <img src="assets/images/produit-3.png" alt="" class="img-fluid">
+                <div><a href="produitdetail.php?id=3">
+                  <img src="assets/images/produit-3.png" alt="" class="img-fluid"></a>
                 </div>
                 <br>
               </div>
               <div class="col-sm-4 col-6">
-                <div>
-                  <img src="assets/images/produit-4.png" alt="" class="img-fluid">
+                <div><a href="produitdetail.php?id=4">
+                  <img src="assets/images/produit-4.png" alt="" class="img-fluid"></a>
                 </div>
                 <br>
               </div>
 
               <div class="col-sm-4 col-6">
-                <div>
-                  <img src="assets/images/produit-5.png" alt="" class="img-fluid">
+                <div><a href="produitdetail.php?id=5">
+                  <img src="assets/images/produit-5.png" alt="" class="img-fluid"></a>
                 </div>
                 <br>
               </div>
               <div class="col-sm-4 col-6">
-                <div>
-                  <img src="assets/images/produit-6.png" alt="" class="img-fluid">
+                <div><a href="produitdetail.php?id=6">
+                  <img src="assets/images/produit-6.png" alt="" class="img-fluid"></a>
                 </div>
                 <br>
               </div>

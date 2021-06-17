@@ -1,3 +1,47 @@
+<?php
+
+$erreurs = [];
+$errorMessage = '';
+
+if (!empty($_POST)) {
+   $name = $_POST['name'];
+   $email = $_POST['email'];
+   $message = $_POST['message'];
+
+   if (empty($name)) {
+       $erreurs[] = 'Pas de nom !';
+   }
+
+   if (empty($email)) {
+       $erreurs[] = 'Pas de mail';
+   } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+       $erreurs[] = 'Email invalide';
+   }
+
+   if (empty($message)) {
+       $erreurs[] = 'le message est vide !';
+   }
+
+   if (empty($erreurs)) {
+    $toEmail = 'example@example.com';
+    $emailSubject = 'New email from your contant form';
+    $headers = ['From' => $email, 'Reply-To' => $email, 'Content-type' => 'text/html; charset=iso-8859-1'];
+
+    $bodyParagraphs = ["Name: {$name}", "Email: {$email}", "Message:", $message];
+    $body = join(PHP_EOL, $bodyParagraphs);
+
+    if (mail($toEmail, $emailSubject, $body, $headers)) {
+        header('Location: thank-you.html');
+    } else {
+        $errorMessage = 'Oops, something went wrong. Please try again later';
+    }
+} else {
+    $allErrors = join('<br/>', $erreurs);
+    $errorMessage = "<p style='color: red;'>{$allErrors}</p>";
+}
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,7 +104,7 @@
                 <a class="nav-link" href="panier.php">Contact</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link2" href="/2-UserCo/index.php">Connexion</a>
+                <a class="nav-link2" href="2-UserCo/index.php">Connexion</a>
               </li>
             </ul>
           </div>
@@ -77,7 +121,7 @@
             <div class="col-lg-12">
               <div class="text-content">
                 <h4>contact</h4>
-                <h2>Je savais pas que tu voulais mon num :0</h2>
+                <h2>Un beau formulaire de contact</h2>
               </div>
             </div>
           </div>
@@ -86,8 +130,8 @@
     </div>
     
     <!-- Banner Ends Here -->
-
-
+    <?php
+    $allErrors ?>
     <section class="contact-us">
       <div class="container">
         <div class="row">
@@ -98,34 +142,34 @@
                 <div class="col-lg-8">
                   <div class="sidebar-item contact-form">
                     <div class="sidebar-heading">
-                      <h2>Envoie moi un petit message</h2>
+                      <h2>Envoie moi un petit message !</h2>
                     </div>
                     <div class="content">
-                      <form id="contact" action="" method="post">
+                      <form id="contact" action="" method="POST">
                         <div class="row">
                           <div class="col-md-6 col-sm-12">
                             <fieldset>
-                              <input name="name" type="text" id="name" placeholder="Ton nom stp" required="">
+                              <input name="name" type="text" id="name" placeholder="Nom" required>
                             </fieldset>
                           </div>
                           <div class="col-md-6 col-sm-12">
                             <fieldset>
-                              <input name="email" type="text" id="email" placeholder="Ton email" required="">
+                              <input name="email" type="text" id="email" placeholder="Email" required>
                             </fieldset>
                           </div>
                           <div class="col-md-12 col-sm-12">
                             <fieldset>
-                              <input name="subject" type="text" id="subject" placeholder="Sujet psk c important">
+                              <input name="subject" type="text" id="sujet" placeholder="Sujet du Message">
                             </fieldset>
                           </div>
                           <div class="col-lg-12">
                             <fieldset>
-                              <textarea name="message" rows="6" id="message" placeholder="Ton Message" required=""></textarea>
+                              <textarea name="message" rows="6" id="message" placeholder="Ton Message" required=></textarea>
                             </fieldset>
                           </div>
                           <div class="col-lg-12">
                             <fieldset>
-                              <button type="submit" id="form-submit" class="main-button">Envoie moi ce Message</button>
+                              <button type="submit" id="submit" class="main-button">Envoi !</button>
                             </fieldset>
                           </div>
                         </div>
@@ -136,20 +180,20 @@
                 <div class="col-lg-4">
                   <div class="sidebar-item contact-information">
                     <div class="sidebar-heading">
-                      <h2>contact information</h2>
+                      <h2>cContact</h2>
                     </div>
                     <div class="content">
                       <ul>
                         <li>
-                          <h5>06 74... nan j'dec</h5>
-                          <span>Mon 06</span>
+                          <h5>06 74 XX XX XX</h5>
+                          <span>Mon numéro</span>
                         </li>
                         <li>
-                          <h5>william.zlojo@synology.com</h5>
+                          <h5>contact@willydev.xyz</h5>
                           <span>Mon mail</span>
                         </li>
                         <li>
-                          <h5>Quelle part en France</h5>
+                          <h5>Quelque part en France 😏</h5>
                           <span>Mon addresse</span>
                         </li>
                       </ul>
