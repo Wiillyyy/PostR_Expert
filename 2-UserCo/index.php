@@ -4,27 +4,27 @@ require_once("assets/sql/connexionSilent.php");
 $conn1=connexionBDD();
  
 if(isset($_POST['connexion'])) {
-   $mailconnect = htmlspecialchars($_POST['mailconnect']);
+   $mailconnect = htmlspecialchars($_POST['mailconnect']); //  Récupère en post les variables entrés en htmlspecialchars
    $mdpconnect = htmlspecialchars($_POST['mdpconnect']);
 
 
    if(!empty($mailconnect) AND !empty($mdpconnect)) {
-      $requser = $conn1->prepare("SELECT * FROM USERS WHERE email = ? AND mdp = ?");
+      $requser = $conn1->prepare("SELECT * FROM USERS WHERE email = ? AND mdp = ?");  //  Vérifie et compare les informations de la base de donnés
       $requser->execute(array($mailconnect, $mdpconnect));
       $userexist = $requser->rowCount();
       
       if($userexist == 1) {
-         $userinfo = $requser->fetch();
+         $userinfo = $requser->fetch(); //  Crée une sessions avec beacoup de variables
          $_SESSION['id'] = $userinfo['iduser'];
          $_SESSION['prenom'] = $userinfo['prenom'];
          $_SESSION['mail'] = $userinfo['email'];
          $_SESSION['nom'] = $userinfo['nom'];
-         header("Location: dashboard.php?id=".$_SESSION['id']);
+         header("Location: dashboard.php?id=".$_SESSION['id']); //  Redirige vers le dashboard AVEC tout les id correspondant a la session
       } else {
-         $erreur = "Mauvais mail ou mot de passe !";
+         $erreur = "Mauvais mail ou mot de passe !"; //  affiche une erreur
       }
    } else {
-      $erreur = "Tous les champs doivent être complétés !";
+      $erreur = "Tous les champs doivent être complétés !"; //  affiche une erreur
    }
 }
 ?>
@@ -75,7 +75,7 @@ if(isset($_POST['connexion'])) {
         
         <div>
         <?php
-         if(isset($erreur)) {
+         if(isset($erreur)) {  // lieu d'affichage de l'erreur 
             echo '<font color="red">'.$erreur."</font>";
          } 
          ?></div>

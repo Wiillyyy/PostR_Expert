@@ -9,11 +9,11 @@ if(!isset($_SESSION['pseudo'])) {  //Si un utilisateur malveillant tente de d'ac
 
 if(!empty($_GET)){
 
-  $date = htmlspecialchars($_GET['datecmd']);
+  $date = htmlspecialchars($_GET['datecmd']);  //  Formulaire de commandes comme existant déjà
   $refuser = htmlspecialchars($_GET['refUser']);
   
 
-  $req = $conn1->prepare('INSERT INTO COMMANDES (datecmd, refuser) VALUES (?,?);');
+  $req = $conn1->prepare('INSERT INTO COMMANDES (datecmd, refuser) VALUES (?,?);'); // Insertion dans la table commandes
   $req->execute([$date, $refuser]);
   header("Location: Commande.php");
 }
@@ -74,7 +74,7 @@ if(!empty($_GET)){
       <?php
         $res=listeCmd($conn1);
         $res1=listeUsers($conn1);			          // execution de la requête.
-        $resu = $res->fetchAll();               // on rrecupere le tout dans un tableau. la 1ère ligne est associcé a chaque ligne qui suit.
+        $resu = $res->fetchAll();               // on recupere le tout dans un tableau. la 1ère ligne est associcé a chaque ligne qui suit.
 
 				// Debut code pour affichage du resultat :
 				//====================================================================
@@ -92,7 +92,7 @@ if(!empty($_GET)){
     <div class="wrapper fadeInDown">
     <div id="formContent">
 
-    <form METHOD="GET">
+    <form METHOD="POST">
       <h2> Enregistrer une commande : </h2>
       <div><h3> Date de la commande : <br><br><input type="date" id="start" name="datecmd" value="2021-06-18" min="2021-06-18" max="2022-01-01" required><br> Client : <br><h3>
       
@@ -105,7 +105,7 @@ if(!empty($_GET)){
       }
     print( "</select>");
   ?> </div>
-  <input type="submit" value="Envoyer">
+  <input type="submit" name="submit" value="Envoyer">
 
 
   <div>

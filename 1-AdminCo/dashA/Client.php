@@ -11,7 +11,7 @@ if(!isset($_SESSION['pseudo'])) {  //Si un utilisateur malveillant tente de d'ac
 
 if(!empty($_GET)){ //Si l'user selectionne le bouton submit execution de la tâche on attribue les variables qu'il a rentré
 
-    $nom = htmlspecialchars($_GET['nom']);
+    $nom = htmlspecialchars($_GET['nom']);   // Formulaire d'inscription client comme existant déjà
     $prenom = htmlspecialchars($_GET['prenom']);
     $email = htmlspecialchars($_GET['email']);
     $mdp = htmlspecialchars($_GET['mdp']);
@@ -23,8 +23,8 @@ if(!empty($_GET)){ //Si l'user selectionne le bouton submit execution de la tâc
       if($emailexist != 0){  //Verifie si l'email est déja utilisé ou non 
         $erreur = "L'adresse E-mail est déjà utilisée !";
       }else {
-          $req = $conn1->prepare('INSERT INTO USERS (email, mdp, prenom, nom) VALUES (?,?,?,?);');
-          $req->execute([$email, $mdp, $prenom, $nom]);
+          $req = $conn1->prepare('INSERT INTO USERS (email, mdp, prenom, nom) VALUES (?,?,?,?);');  // Insert dans la table USERS
+          $req->execute([$email, $mdp, $prenom, $nom]); 
           header("Location: Client.php"); 
     }
   }
@@ -85,8 +85,8 @@ if(!empty($_GET)){ //Si l'user selectionne le bouton submit execution de la tâc
             </tr>
       <Table Border=1>
       <?php
-        $res=listeUsers($conn1);				// execution de la requ�te.
-        $resu = $res->fetchAll();               // on rrecupere le tout dans un tableau. la 1ère ligne est associcé a chaque ligne qui suit.
+        $res=listeUsers($conn1);				// execution de la requête.
+        $resu = $res->fetchAll();               // on recupere le tout dans un tableau. la 1ère ligne est associcé a chaque ligne qui suit.
 
 				// Debut code pour affichage du resultat :
 				//====================================================================

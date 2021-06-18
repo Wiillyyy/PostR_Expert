@@ -13,7 +13,7 @@ if(!empty($_POST)){
   $refPoster = htmlspecialchars($_POST['refPoster']);
   $quantite = htmlspecialchars($_POST['quantité']);
 
-  $req = $conn1->prepare('INSERT INTO CONTENUCMD (idrefcmd, idrefpstr, qtecmd) VALUES (?,?,?);');
+  $req = $conn1->prepare('INSERT INTO CONTENUCMD (idrefcmd, idrefpstr, qtecmd) VALUES (?,?,?);'); // Insertion dans la table ContenuCMD
   $req->execute([$refcmd, $refPoster,$quantite]);
   header("Location: editCmd.php");
 }

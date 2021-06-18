@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
-/* Basique */
+/* Basique CSS... */
 
 html {
   background-color: #da8920;
@@ -29,7 +29,7 @@ h2 {
 }
 
 
-/* fleche */
+/* fleche droite */
 .fleche {
   border: solid #da8920;
   border-width: 0 3px 3px 0;
@@ -45,7 +45,7 @@ h2 {
     -webkit-transform: rotate(135deg);
   }
 
-/* Bouton retour*/
+/* Cercle sous la fleche, bouton retour*/
 
 #cercle {
   width: 40px;
@@ -210,7 +210,7 @@ input[type=text]:placeholder {
 
 /* Les animations */
 
-/* Animation  CSS3 fadiin webkit opacité reduite */
+/* Animation CSS3 fadiing webkit opacité reduite */
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
@@ -253,7 +253,7 @@ input[type=text]:placeholder {
 
 .fadeIn {
   opacity:0;
-  -webkit-animation:fadeIn ease-in 1;
+  -webkit-animation:fadeIn ease-in 1; /*premiere */
   -moz-animation:fadeIn ease-in 1;
   animation:fadeIn ease-in 1;
 
@@ -274,14 +274,14 @@ input[type=text]:placeholder {
 
 .fadeIn.second {
   -webkit-animation-delay: 0.6s;
-  -moz-animation-delay: 0.6s;
-  animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s; 
+  animation-delay: 0.6s;/* deuxièeme */
 }
 
 .fadeIn.third {
   -webkit-animation-delay: 0.8s;
   -moz-animation-delay: 0.8s;
-  animation-delay: 0.8s;
+  animation-delay: 0.8s; /*etc..*/
 }
 
 .fadeIn.fourth {
@@ -318,7 +318,7 @@ input[type=text]:placeholder {
 
 
 
-/* focus et icons  */
+/* focus et icones  */
 
 *:focus {
     outline: none;
@@ -332,7 +332,7 @@ input[type=text]:placeholder {
   box-sizing: border-box;
 }
 
-/* The switch - the box around the slider */
+/* le switch MDP - la box autour du slider  */
 .switch {
   position: relative;
   display: inline-block;
@@ -340,14 +340,14 @@ input[type=text]:placeholder {
   height: 24px;
 }
 
-/* Hide default HTML checkbox */
+/* cacher la chekbox html par defaut */
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* The slider */
+/* le slider du mdp */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -386,7 +386,7 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* Rounded sliders */
+/* l'arrondissement du Slider */
 .slider.round {
   border-radius: 34px;
 }

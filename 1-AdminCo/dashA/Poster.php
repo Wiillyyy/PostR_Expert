@@ -80,7 +80,7 @@ if(!empty($_GET)){ //Si l'user selectionne le bouton submit execution de la tâc
             </tr>
       <Table table Border=1 >
       <?php
-        $res=listePoster($conn1);				// execution de la requ�te.
+        $res=listePoster($conn1);				// execution de la requête.
         $resu = $res->fetchAll();               // on rrecupere le tout dans un tableau. la 1ère ligne est associcé a chaque ligne qui suit.
 
 				// Debut code pour affichage du resultat :

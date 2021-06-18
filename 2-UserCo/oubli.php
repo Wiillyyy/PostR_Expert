@@ -29,6 +29,7 @@
       <input type="text" id="email" class="fadeIn second" name="email" placeholder="Email" 
       pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" title="Merci d'entrer un E-mail valide !" required>
       <a href="oublisend.php">
+        
         <input type="submit" name="submit" onclick="oublisend.php" class="fadeIn fourth" value="Envoi" href="oublisend.php">
       </a>
       </form>

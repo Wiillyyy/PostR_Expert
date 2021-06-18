@@ -40,11 +40,11 @@ if(!isset($_SESSION['pseudo'])) {  //Si un utilisateur malveillant tente de d'ac
   <main class="main">
   <h1>Voici ma liste de fichiers !</h1>
    
-  <div class="slideshow-container">
+  <div class="slideshow-container"> <!--- html du slide show --->
 
 <div class="mySlides fade">
   <div style="color: black class="numbertext">1 / 3</div>
-  <img src="assetsdash/img/MCD.png" style="width:100%">
+  <img src="assetsdash/img/MCD.png" style="width:100%"> <!--- img 1, 2, 3  --->
   <div style="color: black" class="text">Graphe MCD</div>
 </div>
 
@@ -60,33 +60,34 @@ if(!isset($_SESSION['pseudo'])) {  //Si un utilisateur malveillant tente de d'ac
   <div style="color: black" class="text">Gaant</div>
 </div>
 
-<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a> <!--- script JS  --->
 <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
 </div>
 <br>
 
 <div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(1)"></span>  <!--- fonction pour le point juste en dessous --->
   <span class="dot" onclick="currentSlide(2)"></span> 
   <span class="dot" onclick="currentSlide(3)"></span> 
 </div>
 
+<!--- par défaut toujours a un --->
 <script>
-var slideIndex = 1;
+var slideIndex = 1;     
 showSlides(slideIndex);
 
-function plusSlides(n) {
+function plusSlides(n) {      // on prends la fonction on lui fait +n
   showSlides(slideIndex += n);
 }
 
-function currentSlide(n) {
+function currentSlide(n) {    //pour la faire avancer d'un, donc on l'incrémente
   showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
   var i;
-  var slides = document.getElementsByClassName("mySlides");
+  var slides = document.getElementsByClassName("mySlides"); //nom de fonctions
   var dots = document.getElementsByClassName("dot");
   if (n > slides.length) {slideIndex = 1}    
   if (n < 1) {slideIndex = slides.length}

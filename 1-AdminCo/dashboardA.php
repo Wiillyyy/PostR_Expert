@@ -9,14 +9,14 @@ $nbrMembres = $countMbr->rowCount();
 $countPstr = $conn1->query('SELECT * FROM POSTERS'); //Compte le nombre de Posters au TOTAL
 $nbrPstr = $countPstr->rowCount();
 
-$countCmds = $conn1->query('SELECT * FROM COMMANDES'); //Compte le nombre de Posters au TOTAL
+$countCmds = $conn1->query('SELECT * FROM COMMANDES'); //Compte le nombre de Commandes au TOTAL
 $nbrCmd = $countCmds->rowCount();
 
 if(!isset($_SESSION['pseudo'])) {  //Si un utilisateur malveillant tente de d'acceder via l'url à la page, sans être log, il sera renvoyé a la page 403
    header('Location: error.html');
 }
 
-if(isset($_GET['id']) AND $_GET['id'] > 0) {
+if(isset($_GET['id']) AND $_GET['id'] > 0) { // récupère les id de la session et crée des nouvelles variables exploitables
    $getid = intval($_GET['id']);
    $requser = $conn1->prepare('SELECT * FROM ADMINS WHERE idadmin = ?');
    $requser->execute(array($getid));

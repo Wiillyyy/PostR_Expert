@@ -4,20 +4,20 @@ require_once("assets/sql/connexionSilent.php");
 $conn1=connexionBDD();
  
 if(isset($_POST['connexion'])) {
-   $idconnect = htmlspecialchars($_POST['idconnect']);
-   $mdpconnect = htmlspecialchars($_POST['mdpconnect']);
+   $idconnect = htmlspecialchars($_POST['idconnect']);  // on récupère pseudo admin
+   $mdpconnect = htmlspecialchars($_POST['mdpconnect']);  // et le mdp
 
 
-   if(!empty($idconnect) AND !empty($mdpconnect)) {
-      $requser = $conn1->prepare("SELECT * FROM ADMINS WHERE pseudo = ? AND mdp = ?");
+   if(!empty($idconnect) AND !empty($mdpconnect)) { 
+      $requser = $conn1->prepare("SELECT * FROM ADMINS WHERE pseudo = ? AND mdp = ?"); //  Vérifie et compare les informations de la base de donnés
       $requser->execute(array($idconnect, $mdpconnect));
       $userexist = $requser->rowCount();
       
-      if($userexist == 1) {
+      if($userexist == 1) { // Si l'user existe, on continue
          $userinfo = $requser->fetch();
          $_SESSION['id'] = $userinfo['idadmin'];
-         $_SESSION['pseudo'] = $userinfo['pseudo'];
-         header("Location: dashboardA.php?id=".$_SESSION['id']);
+         $_SESSION['pseudo'] = $userinfo['pseudo'];  // On crée une session et on ajute les id de l'admin
+         header("Location: dashboardA.php?id=".$_SESSION['id']);  // On redirige vers le dashboard admin
       } else {
          $erreur = "Mauvais pseudo ou mot de passe !";
       }

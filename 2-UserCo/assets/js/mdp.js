@@ -8,3 +8,5 @@ function myFunction() {
       AfficheMDP.type = 'password';
     }
 }
+
+/* Simple script java qui transforme le type password en text */

@@ -6,13 +6,13 @@ html, body {
 }
 
 * {
-  font-family: "Press Start 2P", cursive;
+  font-family: "Press Start 2P", cursive; /* Police importée de googleapis qui fait un peu hacker, dans le style error 403 */
   box-sizing: border-box;
 }
 
 #app {
   padding: 1rem;
-  background: black;
+  background: black; /* fond noir texte vert */
   display: flex;
   height: 100%;
   justify-content: center;
@@ -41,7 +41,7 @@ html, body {
     opacity: 1;
   }
 }
-.blink {
+.blink {            /*ce qui fait clignoter le texte */
   animation-name: blink;
   animation-duration: 1s;
   animation-iteration-count: infinite;

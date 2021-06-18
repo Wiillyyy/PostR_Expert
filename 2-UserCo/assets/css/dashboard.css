@@ -2,16 +2,13 @@ body {
   margin: 0;
   background-color: #3f0d12;
   background-image: linear-gradient(315deg, #3f0d12 0%, #a71d31 74%);
-  
-  
-
 }
 
 h1 {
   font-size: 17px;
 }
 
-#wrap {
+#wrap {     /* apparait dans l'url si on l'utilise */
   font-family: sans-serif;
   font-size: 21px;
   line-height: 1.6;
@@ -24,11 +21,11 @@ h1 {
   border-radius: 0px 30px 30px 0px;
 }
 
-#wrap:not(:target) { /* Permet d'étendre le menu */
+#wrap:not(:target) { /* Permet d'étendre le menu de -335 pixels */
   transform: translate3d(-335px, 0, 0);
 }
 
-#wrap:target {
+#wrap:target {    /* par defaut */
   transform: translate3d(0, 0, 0);
 }
 
@@ -41,8 +38,8 @@ h1 {
 }
 
 #wrap:target #open,
-#wrap:not(:target) #close {
-  display: none;
+#wrap:not(:target) #close {     /* fait disparait les trois traits blancs si on clique dessus */
+  display: none;  
 }
 
 #wrap:target #open {
@@ -86,7 +83,7 @@ a:hover {
 
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
-/* Basique */
+/* Basique CSS body, a, h2 ...*/
 
 
 
@@ -118,7 +115,7 @@ h2 {
 
 
 
-/* Structure du Hoover */
+/* Structure de la DIV BLANCHE carrée */
 
 .wrapper {
   display: flex;
@@ -130,7 +127,7 @@ h2 {
   padding: 20px;
 }
 
-.wrapper2 {
+.wrapper2 { /* tentative d'en faire un deuxième mais abandonné */
   position: absolute;
   display: flex;
   align-items: center;
@@ -166,7 +163,7 @@ h2 {
 
 
 
-/* Les deux tabs */
+/* Les deux tabs qui se soulignent quand on hover */
 
 h2.inactive {
   color: #cccccc;
@@ -184,7 +181,7 @@ h3 {
 
 
 
-/* Typo*/
+/* typo utilisée ainsi que les animations */
 
 input[type=button], input[type=submit], input[type=reset]  {
   background-color: #da2020;
@@ -201,7 +198,7 @@ input[type=button], input[type=submit], input[type=reset]  {
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
   margin: 5px 20px 40px 20px;
-  -webkit-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out; 
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -274,7 +271,7 @@ input[type=password] {
 }
 
 
-/* Simple CSS3 Fade-in Animation */
+/* animation css simple de sous-lignage */
 .underlineHover:after {
   display: block;
   left: 0;

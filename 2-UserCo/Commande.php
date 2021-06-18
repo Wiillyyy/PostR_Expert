@@ -38,7 +38,8 @@ function listPerUser($connex){
   <header class="header">
     <nav class="nav">
       <a href="#wrap" id="open">
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="34px" height="27px" viewBox="0 0 34 27" enable-background="new 0 0 34 27" xml:space="preserve">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+    x="0px" y="0px" width="34px" height="27px" viewBox="0 0 34 27" enable-background="new 0 0 34 27" xml:space="preserve"> <!-- Va prendre un svg rectangle qu'on multiplie 3 fois -->
     <rect fill="#FFFFFF" width="34" height="4"/> <!-- On remplit les 3 barres de blanc -->
     <rect y="11" fill="#FFFFFF" width="34" height="4"/> <!-- Celle du milieu -->
     <rect y="23" fill="#FFFFFF" width="34" height="4"/> <!-- Dernière -->
@@ -74,8 +75,8 @@ function listPerUser($connex){
             </tr>
       <Table Border=1>
       <?php
-        $res=listPerUser($conn1);			          // execution de la requête.
-        $resu = $res->fetchAll();               // on rrecupere le tout dans un tableau. la 1ère ligne est associcé a chaque ligne qui suit.
+        $res=listPerUser($conn1);			       // execution de la requête pour lister par user
+        $resu = $res->fetchAll();               // on recupere le tout dans un tableau. la 1ère ligne est associcé a chaque ligne qui suit.
 
 				// Debut code pour affichage du resultat :
 				//====================================================================
