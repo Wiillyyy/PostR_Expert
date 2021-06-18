@@ -1,6 +1,10 @@
 <?php
-
+require_once("assets/sql/connexionSilent.php");
+$conn1=connexionBDD();
+require_once("assets/sql/fonctionSQL.php");
 if(isset($_GET['submit'])) {
+
+// $mdp = 'SELECT mdp FROM USERS where email = destinataire'
 
 $destinataire = $_GET['email'];
 
@@ -26,7 +30,7 @@ $message = '<html>
             <div align="center"> <h1>Bonjour,</h1></div>
             <p align="center">Vous avez perdu votre Mot de passe ? oh c\'est ballaud ça, mais bon heureusement que je suis la :)
             <br> Pour eviter que ces choses se reproduisent, pensez a noter le mot de passe la prochaine fois, la bande passante pousse pas sur les arbres !
-            <br> Votre mot de passe<b> </b> </p>
+            <br> Votre mot de passe : <b> '.$mdp.' </b> </p>
             <p align="center"> A bientôt sur <a href="#">PostR Expert</a> !</p>
 
           </td>
@@ -43,7 +47,16 @@ $message = '<html>
   </font>
 </body>
 </html>';
-if( mail($destinataire, $sujet, $message, $headers) ){  //si le mail contient tous les elements il s'execute sinon erreur
+
+$reqemail = $conn1->prepare('SELECT email FROM USERS WHERE email = ? ;');  // On recupere les emails de la table USERS 
+$reqemail->execute(array($destinataire));  // mise en tableau des valeurs pour comparaison
+$emailexist = $reqemail->rowCount();
+
+if($emailexist != 0){
+  $erreur = "L'adresse E-mail n'existe pas dans la !"; 
+}else
+
+  if( mail($destinataire, $sujet, $message, $headers) ){  //si le mail contient tous les elements il s'execute sinon erreur
   $erreur = 'Merci de regarder votre boite mail!';
 } else{ 
   $erreur =  'une erreur est survenue lors de lenvoi du message';

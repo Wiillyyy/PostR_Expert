@@ -42,7 +42,7 @@ require_once("assets/pgSQL.php");
 	<script src="java.js"></script>
     <link rel="icon" type="image/png" href="/assets/logo/posterexpertlogo.png">
 
-    <!-- Fichier Bootstrap (banque d'images/logos de couelur) CSS -->
+    <!--  (banque d'images/logos de couelur) CSS -->
     <link href="assets/css/banque.css" rel="stylesheet">
 
 

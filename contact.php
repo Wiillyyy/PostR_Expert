@@ -9,40 +9,40 @@ if (isset($_SESSION['prenom'])) { // isset permet de vérifier si une variable e
   $url = "2-UserCo/index.php";
 }
 
-$erreurs = [];  // tentative d'envoi mail mais ne fonctionne PAS ENCORE !!!!!
+$erreurs = [];  // tentative d'envoi mail mais ne fonctionne PAS !!!!!
 $errorMessage = ''; 
 
-if (!empty($_POST)) {
+if (!empty($_POST)) {   //si vide alors
    $name = $_POST['name'];
    $email = $_POST['email'];
    $message = $_POST['message'];
 
-   if (empty($name)) {
+   if (empty($name)) { // erreur
        $erreurs[] = 'Pas de nom !';
    }
 
-   if (empty($email)) {
+   if (empty($email)) {   // erreur
        $erreurs[] = 'Pas de mail';
-   } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+   } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {  // erreur
        $erreurs[] = 'Email invalide';
    }
 
-   if (empty($message)) {
+   if (empty($message)) {  // erreur
        $erreurs[] = 'le message est vide !';
    }
 
-   if (empty($erreurs)) {
-    $toEmail = 'example@example.com';
-    $emailSubject = 'New email from your contant form';
+   if (empty($erreurs)) { 
+    $toEmail = 'contact@willydev.xyz';
+    $emailSubject = 'Un user vous a envoyé un mail !';
     $headers = ['From' => $email, 'Reply-To' => $email, 'Content-type' => 'text/html; charset=iso-8859-1'];
 
     $bodyParagraphs = ["Name: {$name}", "Email: {$email}", "Message:", $message];
     $body = join(PHP_EOL, $bodyParagraphs);
 
     if (mail($toEmail, $emailSubject, $body, $headers)) {
-        header('Location: thank-you.html');
+        header('Location: contact.php');
     } else {
-        $errorMessage = 'Oops, something went wrong. Please try again later';
+        $errorMessage = 'Il y a eu une erreur';
     }
 } else {
     $allErrors = join('<br/>', $erreurs);
@@ -70,7 +70,7 @@ if (!empty($_POST)) {
 		<script src="java.js"></script>
     <link rel="icon" type="image/png" href="/assets/logo/posterexpertlogo.png">
 
-    <!-- Fichier Bootstrap (banque d'images/logos de couelur) CSS -->
+    <!--(banque d'images/logos de couelur) CSS -->
     <link href="assets/css/banque.css" rel="stylesheet">
 
 
@@ -147,7 +147,7 @@ if (!empty($_POST)) {
                       <h2>Envoie moi un petit message !</h2>
                     </div>
                     <div class="content">
-                      <form id="contact" action="" method="POST">
+                      <form id="contact" action="" method="POST"> <!--- début du mail test --->
                         <div class="row">
                           <div class="col-md-6 col-sm-12">
                             <fieldset>
@@ -171,7 +171,7 @@ if (!empty($_POST)) {
                           </div>
                           <div class="col-lg-12">
                             <fieldset>
-                              <button type="submit" id="submit" class="main-button">Envoi !</button>
+                              <button type="submit" name="submit" id="submit" class="main-button">Envoi !</button>
                             </fieldset>
                           </div>
                         </div>
