@@ -31,8 +31,8 @@ if(!isset($_SESSION['pseudo'])) {  //Si un utilisateur malveillant tente de d'ac
       <a href="../dashboardA.php?id=1">Dashboard</a>
       <a href="Client.php">Clients</a>
       <a href="Poster.php">Posters</a>
-      <a href="gestionCommande.php">Gestion Commandes</a>
-      <a href="Commandes.php">Commandes</a>
+      <a href="editCmd.php">Éditer une Commande</a>
+      <a href="Commande.php">Commandes</a>
       <a href="fichiers.php">BDD/MCD/Graphe()</a>
       <a style="position: fixed" href="../deco.php">Déconnexion</a>
     </nav>
@@ -55,9 +55,9 @@ if(!isset($_SESSION['pseudo'])) {  //Si un utilisateur malveillant tente de d'ac
 </div>
 
 <div class="mySlides fade">
-  <div class="numbertext">3 / 3</div>
-  <img src="img_mountains_wide.jpg" style="width:100%">
-  <div class="text">Caption Three</div>
+<div style="color: black class="numbertext">3 / 3</div>
+  <img src="assetsdash/img/Gant.png" style="width:100%">
+  <div style="color: black" class="text">Gaant</div>
 </div>
 
 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>

@@ -49,7 +49,7 @@ if(!empty($_GET)){ //Si l'user selectionne le bouton submit execution de la tâc
       <a href="../dashboardA.php?id=1">Dashboard</a>
       <a href="Client.php">Clients</a>
       <a href="Poster.php">Posters()</a>
-      <a href="gestionCommande.php">Gestion Commandes</a>
+      <a href="editCmd.php">Éditer une Commande</a>
       <a href="Commande.php">Commandes</a>
       <a href="fichiers.php">BDD/MCD/Graphe</a>
       <a style="position: fixed" href="../deco.php">Déconnexion</a>
@@ -103,7 +103,7 @@ if(!empty($_GET)){ //Si l'user selectionne le bouton submit execution de la tâc
     <div id="formContent">
 	<form>
       <h2> Ajouter Poster </h2> <br />
-      <form METHOD="GET" ACTION="">
+      <form METHOD="POST" ACTION="">
       
       <input type="text" id="login" name="titre" placeholder="Titre du Poster" required>
 

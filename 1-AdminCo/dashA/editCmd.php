@@ -12,7 +12,7 @@ if(!empty($_GET)){
   $refuser = htmlspecialchars($_GET['refUser']);
   $date = htmlspecialchars($_GET['datecmd']);
 
-  $req = $conn1->prepare('INSERT INTO COMMANDES (datecmd, refuser) VALUES (?,?);');
+  $req = $conn1->prepare('INSERT INTO CONTENUCMD (idrefcmd, idrefpstr, qtecmd) VALUES (?,?);');
   $req->execute([$date, $refuser]);
   header("Location: Commande.php");
 }
@@ -41,8 +41,8 @@ if(!empty($_GET)){
       <a href="../dashboardA.php?id=1">Dashboard</a>
       <a href="Client.php">Clients</a>
       <a href="Poster.php">Posters</a>
-      <a href="editCmd.php">Éditer une Commande</a>
-      <a href="Commande.php">Commandes()</a>
+      <a href="editCmd.php">Éditer une Commande()</a>
+      <a href="Commande.php">Commandes</a>
       <a href="fichiers.php">BDD/MCD/Graphe</a>
       <a style="position: fixed" href="../deco.php">Déconnexion</a>
     </nav>
@@ -54,7 +54,7 @@ if(!empty($_GET)){
     <div class="wrapper fadeInDown">
     <div id="formContent">
     <form>
-      <h2> Liste des Commandes </h2> <br />
+      <h2> Détail des commandes </h2> <br />
       <style>
 		table, th, td {
         border-collapse: collapse;
@@ -92,18 +92,29 @@ if(!empty($_GET)){
     <div id="formContent">
 
     <form METHOD="GET">
-      <h2> Enregistrer une commande : </h2>
-      <div><h3> Date de la commande : <br><br><input type="date" id="start" name="datecmd" value="2021-06-18" min="2021-06-18" max="2022-01-01" required><br> Client : <br><h3>
-      
+      <h2> Éditer une commande : </h2>
+      <div><h3> Identifiant de la commande : </h3>
       <?php
-      $res=listeUsers($conn1);
-      $resu = $res->fetchAll(); // on fetch le tout dans un tableau. Dans le tableau résultat, la 1ère ligne est associée a chaque ligne qui suit.
-      print( '<select name="refUser">'); // envoyé comme paramètre dans le formulaire
+      $res=listeCommandes($conn1);
+      $resu = $res->fetchAll();
+      print( '<select name="refCmd">');
       foreach ($resu as $ligne) {
-      print( '<option value='.$ligne["iduser"].'>'.$ligne["prenom"].'</option>');
+      print( '<option value='.$ligne["idcommande"].'>'.$ligne["idcommande"].'</option>');
       }
+      print( "</select>");
+      ?><h3>Article : <br></h3>
+    <?php
+    $res=listePoster($conn1);
+    $resu = $res->fetchAll();
+    print( '<select name="refPoster">');
+    foreach ($resu as $ligne) {
+    print( '<option value='.$ligne["idposter"].'>'.$ligne["titre"].'</option>');
+    }
     print( "</select>");
-  ?> </div>
+?>    
+
+      
+ </div>
   <input type="submit" value="Envoyer">
 
 

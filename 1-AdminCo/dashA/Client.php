@@ -53,7 +53,7 @@ if(!empty($_GET)){ //Si l'user selectionne le bouton submit execution de la tâc
       <a href="../dashboardA.php?id=1">Dashboard</a>
       <a href="Client.php">Clients()</a>
       <a href="Poster.php">Posters</a>
-      <a href="gestionCommande.php">Gestion Commandes</a>
+      <a href="editCmd.php">Éditer une Commande</a>
       <a href="Commande.php">Commandes</a>
       <a href="fichiers.php">BDD/MCD/Graphe</a>
       <a style="position: fixed" href="../deco.php">Déconnexion</a>
@@ -92,7 +92,7 @@ if(!empty($_GET)){ //Si l'user selectionne le bouton submit execution de la tâc
 				//====================================================================
 				foreach ($resu as $ligne) {
                     $idc = $ligne["iduser"]; // pour chaque ligne du tableau globale 2D (une ligne est vue comme un tableau 1D)
-					$lePr = $ligne["prenom"];
+					          $lePr = $ligne["prenom"];
                     $lenom = $ligne["nom"];
                     $mail = $ligne["email"];
                     $mdp = $ligne["mdp"]; // on r�cup�re la variable de la ligne en cours avec le nom de son champ. Ici le champ s'appelle "nomclient" qui est le nom de l'attribut de la table.
@@ -101,8 +101,6 @@ if(!empty($_GET)){ //Si l'user selectionne le bouton submit execution de la tâc
 				}
 
 				// fin code affichage du resultat
-				//====================================================================
-				deconnexionBDD($conn1);
 				?></table>
   <div>
 

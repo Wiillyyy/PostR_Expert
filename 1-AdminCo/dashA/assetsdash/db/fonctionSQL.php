@@ -2,7 +2,7 @@
 
 
 function listeUsers($connex) {
-     $sql="SELECT * FROM USERS ORDER BY prenom ;";
+     $sql="SELECT * FROM USERS ORDER BY iduser ;";
      $result=$connex->query($sql);
      return $result;
 }
@@ -12,5 +12,17 @@ function listePoster($connex) {
      $result=$connex->query($sql);
      return $result;
 }
+
+function listeCmd($connex) {
+     $sql="SELECT * FROM COMMANDES ORDER BY idcommande ;";
+     $result=$connex->query($sql);
+     return $result;
+}
+
+function listeCommandes($connex) {
+     $sql="SELECT idcommande FROM COMMANDES ORDER BY idcommande;";
+     $result=$connex->query($sql);
+     return $result;
+ }
 
 ?>

@@ -3,6 +3,15 @@ session_start();
 require_once("assets/sql/connexionSilent.php");
 $conn1=connexionBDD();
 
+$countMbr = $conn1->query('SELECT * FROM USERS'); //Compte le nombre d'idusers au TOTAL
+$nbrMembres = $countMbr->rowCount();
+
+$countPstr = $conn1->query('SELECT * FROM POSTERS'); //Compte le nombre de Posters au TOTAL
+$nbrPstr = $countPstr->rowCount();
+
+$countCmds = $conn1->query('SELECT * FROM COMMANDES'); //Compte le nombre de Posters au TOTAL
+$nbrCmd = $countCmds->rowCount();
+
 if(!isset($_SESSION['pseudo'])) {  //Si un utilisateur malveillant tente de d'acceder via l'url à la page, sans être log, il sera renvoyé a la page 403
    header('Location: error.html');
 }
@@ -36,7 +45,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
       <a href="#">Dashboard()</a>
       <a href="dashA/Client.php">Clients</a>
       <a href="dashA/Poster.php">Posters</a>
-      <a href="dashA/gestionCommande.php">Gestion Commandes</a>
+      <a href="dashA/editCmd.php">Éditer une Commande</a>
       <a href="dashA/Commande.php">Commandes</a>
       <a href="dashA/fichiers.php">BDD/MCD/Graphe</a>
       <a style="position: fixed" href="deco.php">Déconnexion</a>
@@ -45,17 +54,17 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
   <main class="main">
 
   <h1 style="font-size: 50px; text-align: center">Bienvenue <?php echo $_SESSION['pseudo']; ?> ! </h1>
-    <h2 style="color: red"> Quelques Chiffres :</h2>
+    <h2 style="color: red"> Quelques Chiffres ! </h2>
    
-    <h1>Nombres de Clients Inscrits :</h1>
+    <h1>Nombres de Clients Inscrits : <?php echo $nbrMembres ?> </h1>
 
-    <p>Contenu 2</p>
+    <p>------------------------------------------------------------</p>
 
-    <h1>Nombre de Posters :</h1>
+    <h1>Nombre de Posters : <?php echo $nbrPstr ?> </h1> 
 
-    <p>Contenu 2</p>
+    <p>------------------------------------------------------------</p>
 
-    <h1>Nombre de Commandes en Cours :</h1>
+    <h1>Nombre de Commandes en Cours : <?php echo $nbrCmd ?> </h1>
 
   </main>
 </div>
