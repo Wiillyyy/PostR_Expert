@@ -1,3 +1,19 @@
+<?php
+session_start();
+require_once("assets/pgSQL.php");  // pour inserer les infos des poster précédemments crées
+
+
+if (isset($_SESSION['prenom'])) { // isset permet de vérifier si une variable est présente et non nulle //on verifie si la session est démarrée
+  $connexion = "Mon Compte"; //si elle est démarrée le menu Mon Compte est présent sur la page
+  $url = "2-UserCo/dashboard.php?".$_SESSION['id'];
+}
+ else {
+  $connexion = "Connexion"; //sinon c'est le menu de connexion qui est présent
+  $url = "2-UserCo/index.php";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -27,16 +43,6 @@
 
   <body>
 
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>  
-    <!-- ***** Preloader End ***** -->
-
     <!-- Header -->
     <header class="">
       <nav class="navbar navbar-expand-lg">
@@ -63,7 +69,7 @@
  
               </li>
               <li class="nav-item">
-               <a class="nav-link2" href="2-UserCo/index.php">Connexion</a>
+              <a class="nav-link2" href=<?php echo $url ?>> <?php echo $connexion ?> </a>
               </li>
             </ul>
           </div>
@@ -71,8 +77,7 @@
       </nav>
     </header>
 
-    <!-- Page Content -->
-    <!-- Banner Starts Here -->
+
     <div class="heading-page header-text">
       <section class="page-heading">
         <div class="container">
@@ -87,200 +92,6 @@
         </div>
       </section>
     </div>
-    
-    <!-- Banner Ends Here -->
-
-    <!-- 
-    <section class="contact-us">
-      <div class="container">
-        <br>
-        <br>
-
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <div class="row">
-                  <div class="col-6">
-                       <em>Sous-Total</em>
-                  </div>
-                  
-                  <div class="col-6 text-right">
-                       <strong>1128.99€</strong>
-                  </div>
-             </div>
-          </li>
-          
-          <li class="list-group-item">
-               <div class="row">
-                    <div class="col-6">
-                         <em>Frais de Ports</em>
-                    </div>
-
-                    <div class="col-6 text-right">
-                         <strong>4.99€</strong>
-                    </div>
-               </div>
-          </li>
-
-          <li class="list-group-item">
-               <div class="row">
-                    <div class="col-6">
-                         <em>TVA</em>
-                    </div>
-
-                    <div class="col-6 text-right">
-                         <strong>20.00€</strong>
-                    </div>
-               </div>
-          </li>
-
-          <li class="list-group-item">
-               <div class="row">
-                    <div class="col-6">
-                         <em>Total</em>
-                    </div>
-
-                    <div class="col-6 text-right">
-                         <strong>2€</strong>
-                    </div>
-               </div>
-          </li>
-
-          <li class="list-group-item">
-               <div class="row">
-                    <div class="col-6">
-                         <em>Carte de fidélité</em>
-                    </div>
-
-                    <div class="col-6 text-right">
-                         <strong>6.87€</strong>
-                    </div>
-               </div>
-          </li>
-        </ul>
-
-        <div class="inner-content">
-          <div class="contact-us">
-            <div class="contact-form">
-                <form action="#">
-                     <div class="row">
-                          <div class="col-sm-6 col-xs-12">
-                               <div class="form-group">
-                                    <label class="control-label">Entre tes cuisses:</label>
-                                    <select class="form-control" data-msg-required="This field is required.">
-                                         <option value="">-- Choisir --</option>
-                                         <option value="dr">Dr.</option>
-                                         <option value="miss">Miss</option>
-                                         <option value="mr">Mr.</option>
-                                         <option value="mrs">Mrs.</option>
-                                         <option value="ms">Ms.</option>
-                                         <option value="other">Other</option>
-                                         <option value="prof">Prof.</option>
-                                         <option value="rev">Rev.</option>
-                                    </select>
-                               </div>
-                          </div>
-                          <div class="col-sm-6 col-xs-12">
-                               <div class="form-group">
-                                    <label class="control-label">Nom:</label>
-                                    <input type="text" class="form-control">
-                               </div>
-                          </div>
-                     </div>
-                     <div class="row">
-                          <div class="col-sm-6 col-xs-12">
-                               <div class="form-group">
-                                    <label class="control-label">Email:</label>
-                                    <input type="text" class="form-control">
-                               </div>
-                          </div>
-                          <div class="col-sm-6 col-xs-12">
-                               <div class="form-group">
-                                    <label class="control-label">Tel:</label>
-                                    <input type="text" class="form-control">
-                               </div>
-                          </div>
-                     </div>
-                     <div class="row">
-                          <div class="col-sm-6 col-xs-12">
-                               <div class="form-group">
-                                    <label class="control-label">Addresse 1:</label>
-                                    <input type="text" class="form-control">
-                               </div>
-                          </div>
-                          <div class="col-sm-6 col-xs-12">
-                               <div class="form-group">
-                                    <label class="control-label">Addresse 2:</label>
-                                    <input type="text" class="form-control">
-                               </div>
-                          </div>
-                     </div>
-                     <div class="row">
-                          <div class="col-sm-6 col-xs-12">
-                               <div class="form-group">
-                                    <label class="control-label">Ville:</label>
-                                    <input type="text" class="form-control">
-                               </div>
-                          </div>
-                          <div class="col-sm-6 col-xs-12">
-                               <div class="form-group">
-                                    <label class="control-label">Département:</label>
-                                    <input type="text" class="form-control">
-                               </div>
-                          </div>
-                     </div>
-                     <div class="row">
-                          <div class="col-sm-6 col-xs-12">
-                               <div class="form-group">
-                                    <label class="control-label">Code Postal:</label>
-                                    <input type="text" class="form-control">
-                               </div>
-                          </div>
-                          <div class="col-sm-6 col-xs-12">
-                               <div class="form-group">
-                                    <label class="control-label">Pays:</label>
-                                    <select class="form-control">
-                                         <option value="">-- Choisir --</option>
-                                         <option value="">-- France --</option>
-                                         <option value="">-- Anglais --</option>
-                                         <option value="">-- Arabes --</option>
-                                    </select>
-                               </div>
-                          </div>
-                     </div>
-
-                     <div class="row">
-                          <div class="col-sm-6 col-xs-12">
-                               <div class="form-group">
-                                    <label class="control-label">Méthode de Reglement</label>
-
-                                    <select class="form-control">
-                                         <option value="">-- Choisir --</option>
-                                         <option value="bank">CB</option>
-                                         <option value="cash">PaySafeCard</option>
-                                         <option value="paypal">PayPal</option>
-                                    </select>
-                               </div>
-                          </div>
-
-                          <div class="col-sm-6 col-xs-12">
-                               <div class="form-group">
-                                    <label class="control-label">Captcha</label>
-                                    <input type="text" class="form-control">
-                               </div>
-                          </div>
-                     </div>
-
-                     <div class="clearfix">
-                          <button type="button" class="filled-button pull-left">Retour</button>
-                          
-                          <button type="submit" class="filled-button pull-right">Terminé</button>
-                     </div>
-                </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
     <!-- le footer a la fin qui contient mes liens et les dernières infos -->
     <footer>
       <div class="container">

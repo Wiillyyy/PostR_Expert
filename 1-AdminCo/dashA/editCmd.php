@@ -7,14 +7,15 @@ $conn1=connexionBDD();
 if(!isset($_SESSION['pseudo'])) {  //Si un utilisateur malveillant tente de d'acceder via l'url à la page, sans être log, il sera renvoyé a la page 403
   header('Location: ../error.html');
 
-if(!empty($_GET)){
+if(!empty($_POST)){
 
-  $refuser = htmlspecialchars($_GET['refUser']);
-  $date = htmlspecialchars($_GET['datecmd']);
+  $refcmd = htmlspecialchars($_POST['refCmd']);
+  $refPoster = htmlspecialchars($_POST['refPoster']);
+  $quantite = htmlspecialchars($_POST['quantité']);
 
-  $req = $conn1->prepare('INSERT INTO CONTENUCMD (idrefcmd, idrefpstr, qtecmd) VALUES (?,?);');
-  $req->execute([$date, $refuser]);
-  header("Location: Commande.php");
+  $req = $conn1->prepare('INSERT INTO CONTENUCMD (idrefcmd, idrefpstr, qtecmd) VALUES (?,?,?);');
+  $req->execute([$refcmd, $refPoster,$quantite]);
+  header("Location: editCmd.php");
 }
 }
 
@@ -50,7 +51,7 @@ if(!empty($_GET)){
   <main class="main">
   <h1>Bienvenue <?php echo $_SESSION['pseudo']; ?> !</h1>
    
-    <h1>Enregstrer une commande dans la base de donnés</b></h1>
+    <h1>Éditer une commande dans la base de donnés ? Vous êtes au bon endroit :)</b></h1>
     <div class="wrapper fadeInDown">
     <div id="formContent">
     <form>
@@ -65,33 +66,32 @@ if(!empty($_GET)){
 		</style>
         <table Border=1.1 bgcolor="red">
             <tr>
-                <th>ID</th>
-                <th>Date de Cmd</th> 
-                <th>Client</th>
+                <th>ID Commande</th>
+                <th>ID Poster</th> 
+                <th>Quantité Commandée</th>
             </tr>
       <Table Border=1>
       <?php
-        $res=listeCmd($conn1);
-        $res1=listeUsers($conn1);			          // execution de la requête.
+        $res=listeEDCmd($conn1);			          // execution de la requête.
         $resu = $res->fetchAll();               // on rrecupere le tout dans un tableau. la 1ère ligne est associcé a chaque ligne qui suit.
 
 				// Debut code pour affichage du resultat :
 				//====================================================================
 				foreach ($resu as $ligne) {
-                    $idc = $ligne["idcommande"]; // pour chaque ligne du tableau globale 2D (une ligne est vue comme un tableau 1D)
-					          $dtc = $ligne["datecmd"];
-                    $ref = $ligne["refuser"]; 
+                    $idc = $ligne["idrefcmd"]; // pour chaque ligne du tableau globale 2D (une ligne est vue comme un tableau 1D)
+					$dtc = $ligne["idrefpstr"];
+                    $ref = $ligne["qtecmd"]; 
                     echo "<tr><td> ".$idc." &nbsp|&nbsp ".$dtc." &nbsp|&nbsp ".$ref." </td></tr>";
 
 				}
 
 				// fin code affichage du resultat
 				?></table>
-  <div>
+  
     <div class="wrapper fadeInDown">
     <div id="formContent">
 
-    <form METHOD="GET">
+    <form METHOD="POST">
       <h2> Éditer une commande : </h2>
       <div><h3> Identifiant de la commande : </h3>
       <?php
@@ -103,7 +103,7 @@ if(!empty($_GET)){
       }
       print( "</select>");
       ?><h3>Article : <br></h3>
-    <?php
+    <div><?php
     $res=listePoster($conn1);
     $resu = $res->fetchAll();
     print( '<select name="refPoster">');
@@ -111,7 +111,8 @@ if(!empty($_GET)){
     print( '<option value='.$ligne["idposter"].'>'.$ligne["titre"].'</option>');
     }
     print( "</select>");
-?>    
+?>
+<h3> Quantité </h3>  <input type = "text" name="quantité"> 
 
       
  </div>

@@ -17,7 +17,8 @@ if(isset($_POST['connexion'])) {
          $userinfo = $requser->fetch();
          $_SESSION['id'] = $userinfo['iduser'];
          $_SESSION['prenom'] = $userinfo['prenom'];
-         $_SESSION['mail'] = $userinfo['Email'];
+         $_SESSION['mail'] = $userinfo['email'];
+         $_SESSION['nom'] = $userinfo['nom'];
          header("Location: dashboard.php?id=".$_SESSION['id']);
       } else {
          $erreur = "Mauvais mail ou mot de passe !";

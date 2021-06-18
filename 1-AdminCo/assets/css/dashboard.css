@@ -44,13 +44,14 @@ body {
 }
 
 .nav a {
-  color: #3e99e9;
+  color: whitesmoke;
   text-decoration: none;
   display: block;
 }
 
 .header {
-  background: #001f3f;
+  background: #d1d3d41c;
+  blur:(5px);
   width: 360px;
   padding: 0 20px;
   display:inline-block;

@@ -54,7 +54,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
   <main class="main">
 
   <h1 style="font-size: 50px; text-align: center">Bienvenue <?php echo $_SESSION['pseudo']; ?> ! </h1>
-    <h2 style="color: red"> Quelques Chiffres ! </h2>
+    <h2 style="color: red"> Les Statistiques ! </h2>
    
     <h1>Nombres de Clients Inscrits : <?php echo $nbrMembres ?> </h1>
 

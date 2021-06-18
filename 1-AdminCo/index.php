@@ -3,9 +3,9 @@ session_start();
 require_once("assets/sql/connexionSilent.php");
 $conn1=connexionBDD();
  
-if(isset($_GET['connexion'])) {
-   $idconnect = htmlspecialchars($_GET['idconnect']);
-   $mdpconnect = htmlspecialchars($_GET['mdpconnect']);
+if(isset($_POST['connexion'])) {
+   $idconnect = htmlspecialchars($_POST['idconnect']);
+   $mdpconnect = htmlspecialchars($_POST['mdpconnect']);
 
 
    if(!empty($idconnect) AND !empty($mdpconnect)) {
@@ -55,8 +55,8 @@ if(isset($_GET['connexion'])) {
   
   
       <!-- Section Login -->
-      <form action="" method="GET">
-        <input type="text" id="login" class="fadeIn second" name="idconnect" placeholder="Pseudo" title="Merci de taper le pseudo de l'admin " required>
+      <form action="" method="POST">
+        <input type="text" id="login" class="fadeIn second" name="idconnect" placeholder="Pseudo" pattern="[\w]+" title="Merci de taper le pseudo de l'admin " required>
         <input type="password" id="password" class="fadeIn third" name="mdpconnect" placeholder="Mot de Passe" pattern="^[a-zA-Z0-9_.-]*$" required>
         <input type="submit" class="fadeIn fourth" name="connexion" value="connexion">
 

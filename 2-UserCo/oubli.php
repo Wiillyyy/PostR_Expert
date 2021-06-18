@@ -1,8 +1,3 @@
-<?php
-
-?>
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,18 +21,15 @@
 
 <div class="wrapper fadeInDown">
     <div id="formContent">
-      <!-- Tabs Titles -->
+
       <h2 class="active"> E-Mail oublié </h2>
   
-    
-      <!-- Login Form -->
-      <form metod>
+      <form metod="POST" action="oublisend.php">
       <h3>Entrez l'email</h3>
-      <input type="text" id="login" class="fadeIn second" name="email" placeholder="Email" 
+      <input type="text" id="email" class="fadeIn second" name="email" placeholder="Email" 
       pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" title="Merci d'entrer un E-mail valide !" required>
-
       <a href="oublisend.php">
-        <input type="submit" onclick="oublisend.php" class="fadeIn fourth" value="Envoyer le mot de passe" href="oublisend.php">
+        <input type="submit" name="submit" onclick="oublisend.php" class="fadeIn fourth" value="Envoi" href="oublisend.php">
       </a>
       </form>
   

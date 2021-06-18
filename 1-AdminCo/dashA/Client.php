@@ -62,7 +62,7 @@ if(!empty($_GET)){ //Si l'user selectionne le bouton submit execution de la tâc
   <main class="main">
   <h1>Bienvenue <?php echo $_SESSION['pseudo']; ?> !</h1>
    
-    <h1>Ici vous pouvez Lister tout les Client de la base de donnés et en ajouter :</b></h1>
+    <h1>Regardons un peu nos clients ...</b></h1>
 
     <div class="wrapper fadeInDown">
     <div id="formContent">
@@ -101,9 +101,10 @@ if(!empty($_GET)){ //Si l'user selectionne le bouton submit execution de la tâc
 				}
 
 				// fin code affichage du resultat
-				?></table>
+				?></table></div>
+  
+  <!-- Début Ajout client -->
   <div>
-
   <div class="wrapper fadeInDown">
     <div id="formContent">
 	<form>

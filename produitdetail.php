@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("assets/pgSQL.php");
 
 	$menuID=1; // forcé à 1 au départ
@@ -9,6 +10,14 @@ require_once("assets/pgSQL.php");
 		$menuID = 1;
 	  }
 
+    if (isset($_SESSION['prenom'])) { // isset permet de vérifier si une variable est présente et non nulle //on verifie si la session est démarrée
+      $connexion = "Mon Compte"; //si elle est démarrée le menu Mon Compte est présent sur la page
+      $url = "2-UserCo/dashboard.php?".$_SESSION['id'];
+    }
+     else {
+      $connexion = "Connexion"; //sinon c'est le menu de connexion qui est présent
+      $url = "2-UserCo/index.php";
+    }
   
 ?>
 
@@ -64,7 +73,7 @@ require_once("assets/pgSQL.php");
                 <a class="nav-link" href="panier.php">Panier</a>
 
               <li class="nav-item">
-                <a class="nav-link2" href="2-UserCo/index.php">Connexion</a>
+              <a class="nav-link2" href=<?php echo $url ?>> <?php echo $connexion ?> </a> <!--- On installe la fonction qui remplace connexion par mon compte SI SESSION --->
               </li>
             </ul>
           </div>
@@ -166,7 +175,7 @@ require_once("assets/pgSQL.php");
                 </div>
 
                 <div class="content">
-                  <form id="contact" action="" method="post">
+                  <form id="quantité" action="" method="GET"> <!-- liste déroulante pour choisir montant--> 
                     <div class="row">
                       <div class="col-md-6 col-sm-12">
                         <fieldset>
@@ -193,7 +202,7 @@ require_once("assets/pgSQL.php");
                       </div>
                       <div class="col-lg-12">
                         <fieldset>
-                          <button type="submit" id="form-submit" class="main-button">Ajouter au Panier</button>
+                          <button type="submit" id="form-submit" class="main-button">Commander</button>
                         </fieldset>
                       </div>
                     </div>

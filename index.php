@@ -1,4 +1,15 @@
 <?php
+session_start();
+
+if (isset($_SESSION['prenom'])) { // isset permet de vérifier si une variable est présente et non nulle //on verifie si la session est démarrée
+  $connexion = "Mon Compte"; //si elle est démarrée le menu Mon Compte est présent sur la page
+  $url = "2-UserCo/dashboard.php?".$_SESSION['id'];
+}
+ else {
+  $connexion = "Connexion"; //sinon c'est le menu de connexion qui est présent
+  $url = "2-UserCo/index.php";
+}
+
   $dir = 'assets/random';
   // Script qui permet de séléctionner aléatoirement des photos parmis un répertoire
   $imgs_arr = array();
@@ -78,7 +89,7 @@
               </li>
               </li>
               <li class="nav-item">
-                <a class="nav-link2" href="2-UserCo/index.php">Connexion</a>
+              <a class="nav-link2" href=<?php echo $url ?>> <?php echo $connexion ?> </a> <!--- On installe la fonction qui remplace connexion par mon compte SI SESSION --->
               </li>
             </ul>
           </div>

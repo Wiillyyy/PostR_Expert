@@ -96,8 +96,7 @@ if(!empty($_GET)){ //Si l'user selectionne le bouton submit execution de la tâc
 
 				// fin code affichage du resultat
 				//====================================================================
-				deconnexionBDD($conn1);
-				?></table>
+				?></table></div>
   <div>
   <div class="wrapper fadeInDown">
     <div id="formContent">
@@ -105,9 +104,9 @@ if(!empty($_GET)){ //Si l'user selectionne le bouton submit execution de la tâc
       <h2> Ajouter Poster </h2> <br />
       <form METHOD="POST" ACTION="">
       
-      <input type="text" id="login" name="titre" placeholder="Titre du Poster" required>
+      <input type="text" id="login" name="titre" placeholder="Titre du Poster" pattern="^[a-zA-Z0-9_ ]*$" required>
 
-      <input type="text" id="login"  name="prix" placeholder="Prix (sensible casse)" title="Merci d'entrer prix juste !" required>
+      <input type="text" id="login"  name="prix" placeholder="Prix (sensible casse)" pattern="^\d+(\.\d+)*$" title="Merci d'entrer un prix juste !" required>
 
       <input type="submit" class="fadeIn fourth" value="Ajout Poster !"> </form>
 <div>

@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
 <!DOCTYPE html>
 <html>
     <head>
-      <meta http-equiv="refresh" content="5; url=../index.php" />
+      <meta http-equiv="refresh" content="5; url=../index.php" /> <!--- Redirection automatique au bout de 5 secondes --->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="description" content="LoginClient">

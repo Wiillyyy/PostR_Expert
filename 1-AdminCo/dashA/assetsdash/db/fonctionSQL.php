@@ -19,6 +19,12 @@ function listeCmd($connex) {
      return $result;
 }
 
+function listeEDCmd($connex) {
+     $sql="SELECT * FROM contenucmd ORDER BY idrefcmd ;";
+     $result=$connex->query($sql);
+     return $result;
+}
+
 function listeCommandes($connex) {
      $sql="SELECT idcommande FROM COMMANDES ORDER BY idcommande;";
      $result=$connex->query($sql);

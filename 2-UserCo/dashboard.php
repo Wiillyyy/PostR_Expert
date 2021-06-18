@@ -1,12 +1,10 @@
-<h3 align=center>
-
 <?php
 session_start();
-require_once("assets/sql/connexion.php");
+require_once("assets/sql/connexionSilent.php");
 $conn1=connexionBDD();
  
 if(!isset($_SESSION['prenom'])) {  //Si l'user tente de d'acceder via l'url à la page, sans être log, il sera renvoyé a la page 403
-    header('Location: error.html'); // envoi  vers erreur
+    header('Location: error.html'); // envoi vers erreur.html
 }
 
 if(isset($_GET['id']) AND $_GET['id'] > 0) {  // on choppe l'id de la session précédente 
@@ -15,6 +13,13 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {  // on choppe l'id de la session pr
    $requser->execute(array($getid));
    $userinfo = $requser->fetch();
 }
+
+$cmdID = $_SESSION['id'];
+// var_dump ($cmdID); debug 
+$countCmds = $conn1->query('SELECT * FROM COMMANDES WHERE refuser = ('.$cmdID.')'); //Compte le nombre de commandes SELON L'ID
+$nbrCmd = $countCmds->rowCount();
+// var_dump ($nbrCmd); debug
+
 ?>
 </h3>
 
@@ -27,75 +32,49 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {  // on choppe l'id de la session pr
    <body>
 
    <html>
+   <body>
+   <div id="wrap">
+  <header class="header">
+    <nav class="nav">
+      <a href="#wrap" id="open">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="34px" height="27px" viewBox="0 0 34 27" enable-background="new 0 0 34 27" xml:space="preserve">
+    <rect fill="#FFFFFF" width="34" height="4"/> <!-- On remplit les 3 barres de blanc -->
+    <rect y="11" fill="#FFFFFF" width="34" height="4"/> <!-- Celle du milieu -->
+    <rect y="23" fill="#FFFFFF" width="34" height="4"/> <!-- Dernière -->
+</svg>
+      </a>
+      <a href="#" id="close">X</a>
+      <a href="#">Dashboard()</a>
+      <a href="Commande.php">Commandes</a>
+      <a style="color: red;" href="deco.php">Déconnexion</a>
+    </nav>
+  </header>
+  <main class="main">
 
-   <div align="center">
-         <h2>Bienvenue Mr. ou Mme. <?php echo $userinfo['prenom']; ?></h2>
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+	<form>
+      <h2> Dashboard Client ! </2> <br />
+      <div align="center">
+         <h3>Bienvenue Mr. ou Mme. <br><?php echo $_SESSION['prenom']; ?>  <?php echo $_SESSION['nom']; ?> </h3>
          <br />
-         Voici une liste d'informations vous concernant :
+         <h3>Voici une liste d'informations vous concernant :</h3>
          <br /><br />
-         Votre Prénom = <?php echo $userinfo['prenom']; ?>
+         <h3>Votre Prénom = <?php echo $_SESSION['prenom']; ?></h3>
          <br />
-         Votre Nom = <?php echo $userinfo['nom']; ?>
+         <h3>Votre Nom = <?php echo $_SESSION['nom']; ?></h3>
          <br />
-         Mail = <?php echo $userinfo['email']; ?>
+         <h3>Mail = <?php echo $_SESSION['mail']; ?></h3>
          <br />
-         Nombre de commandes = 
+         <h3>Nombre de commandes = <?php echo $nbrCmd; ?> </h3>
          <br />
-         <?php
-         if(isset($_SESSION['iduser']) AND $userinfo['iduser'] == $_SESSION['id'])
-             ?>
- 
-  </head>
-  <body><div class="area"></div><nav class="main-menu">
-            <ul>
-                <li>
-                    <a href="http://justinfarrow.com">
-                        <i class="fa fa-home fa-2x"></i>
-                        <span class="nav-text">
-                            Dashboard
-                        </span>
-                    </a>
-                  
-                </li>
-                <li class="has-subnav">
-                    <a href="#">
-                        <i class="fa fa-laptop fa-2x"></i>
-                        <span class="nav-text">
-                            Informations
-                        </span>
-                    </a>
-                    
-                </li>
-                <li class="has-subnav">
-                    <a href="#">
-                       <i class="fa fa-list fa-2x"></i>
-                        <span class="nav-text">
-                            Commandes
-                        </span>
-                    </a>
-                    
-                </li>
-                <li class="has-subnav">
-                    <a href="#">
-                       <i class="fa fa-folder-open fa-2x"></i>
-                        <span class="nav-text">
-                            Éditer Profil
-                        </span>
-                    </a>
-                   
-                </li>
+      <a href="../index.php">
+      <input type="button" class="fadeIn fourth" value="Retour à l'acceuil !"></a>
 
- 
-            </ul>
 
-            <ul class="logout">
-                <li>
-                   <a href="deco.php">
-                         <i class="fa fa-power-off fa-2x"></i>
-                        <span class="nav-text">
-                            Déconnexion
-                        </span>
-                    </a>
-                </li>  
-            </ul>
-        </nav>
+  </main>
+</div>
+
+      </div>
+   </body>
+</html>

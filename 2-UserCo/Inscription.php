@@ -6,16 +6,16 @@ require_once("assets/sql/fonctionSQL.php");
 
 if(!empty($_POST)){ //Si l'user selectionne le bouton submit execution de la tâche on attribue les variables qu'il a rentré
 
-    $nom = htmlspecialchars($_POST['nom']);
-    $prenom = htmlspecialchars($_POST['prenom']);
-    $email = htmlspecialchars($_POST['email']);
-    $mdp = htmlspecialchars($_POST['mdp']);
+    $nom = htmlspecialchars($_POST['nom']); //Récupère en post les variables entrés 
+    $prenom = htmlspecialchars($_POST['prenom']); // htmlspecialchars correspond a un convertisseur qui Convertit les caractères spéciaux en entités HTML
+    $email = htmlspecialchars($_POST['email']);  // protège contre les attauqes mais aussi est pratique car
+    $mdp = htmlspecialchars($_POST['mdp']); // evite que les données fournies par les utilisateurs contiennent des balises HTML, comme pour un forum ou un chat.
 
-      $reqemail = $conn1->prepare('SELECT email FROM USERS WHERE email = ? ;');  //On recupere les email de la table utilisateurs 
-      $reqemail->execute(array($email));  //mise en tableau des valeurs
+      $reqemail = $conn1->prepare('SELECT email FROM USERS WHERE email = ? ;');  // On recupere les emails de la table USERS 
+      $reqemail->execute(array($email));  // mise en tableau des valeurs pour comparaison
       $emailexist = $reqemail->rowCount();
       
-      if($emailexist != 0){  //Verifie si l'email est déja utilisé ou non 
+      if($emailexist != 0){  // (Si 1 alors existe, si 0 alors non) Verifie si l'email est déja utilisé ou non 
         $erreur = "L'adresse E-mail est déjà utilisée !";
       }else {
           $req = $conn1->prepare('INSERT INTO USERS (email, mdp, prenom, nom) VALUES (?,?,?,?);');
@@ -79,7 +79,7 @@ if(!empty($_POST)){ //Si l'user selectionne le bouton submit execution de la tâ
       </form>
 
       <label class="switch">
-      <input type="checkbox" onclick="myFunction()" Class="AfficheMDP">
+      <input type="checkbox" onclick="myFunction()" Class="AfficheMDP"> <!---- Java Script Mot de passe --->
       <span class="slider round"></span>
       </label>
       <h3>Voir le mot de passe</h3>
