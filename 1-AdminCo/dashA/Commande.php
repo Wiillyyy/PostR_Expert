@@ -7,6 +7,8 @@ $conn1=connexionBDD();
 if(!isset($_SESSION['pseudo'])) {  //Si un utilisateur malveillant tente de d'acceder via l'url à la page, sans être log, il sera renvoyé a la page 403
   header('Location: ../error.html');
 
+if(isset($_GET['submit'])) {
+
 if(!empty($_GET)){
 
   $date = htmlspecialchars($_GET['datecmd']);  //  Formulaire de commandes comme existant déjà
@@ -16,6 +18,7 @@ if(!empty($_GET)){
   $req = $conn1->prepare('INSERT INTO COMMANDES (datecmd, refuser) VALUES (?,?);'); // Insertion dans la table commandes
   $req->execute([$date, $refuser]);
   header("Location: Commande.php");
+}
 }
 }
 

@@ -13,10 +13,12 @@ require_once("assets/pgSQL.php");
     if (isset($_SESSION['prenom'])) { // isset permet de vérifier si une variable est présente et non nulle //on verifie si la session est démarrée
       $connexion = "Mon Compte"; //si elle est démarrée le menu Mon Compte est présent sur la page
       $url = "2-UserCo/dashboard.php?".$_SESSION['id'];
+      $commander = "2-UserCo/dashboard.php?".$_SESSION['id'];
     }
      else {
       $connexion = "Connexion"; //sinon c'est le menu de connexion qui est présent
       $url = "2-UserCo/index.php";
+      $commander = "2-UserCo/index.php";
     }
   
 ?>
@@ -202,7 +204,7 @@ require_once("assets/pgSQL.php");
                       </div>
                       <div class="col-lg-12">
                         <fieldset>
-                          <button type="submit" id="form-submit" class="main-button">Commander</button>
+                          <button type="submit" id="form-submit" class="main-button" href="<?php $commander ?>">Commander</button>
                         </fieldset>
                       </div>
                     </div>

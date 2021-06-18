@@ -12,6 +12,13 @@ if (isset($_SESSION['prenom'])) { // isset permet de vérifier si une variable e
   $url = "2-UserCo/index.php";
 }
 
+if (isset($_SESSION['prenom'])) { // isset permet de vérifier si une variable est présente et non nulle //on verifie si la session est démarrée
+     $panier = "Faites chauffer la CB !";
+}
+else {
+     $panier = "Un peu vide par ici... Connectez vous !"; //sinon c'est le menu de connexion qui est présent
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -85,7 +92,7 @@ if (isset($_SESSION['prenom'])) { // isset permet de vérifier si une variable e
             <div class="col-lg-12">
               <div class="text-content">
                 <h4>Panier</h4>
-                <h2>Un peu vide par ici...</h2>
+                <h2><?php echo $panier ?></h2>
               </div>
             </div>
           </div>

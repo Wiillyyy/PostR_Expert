@@ -1,6 +1,6 @@
 <?php
 
-If(isset($_GET['submit'])) {
+if(isset($_GET['submit'])) {
 
 $destinataire = $_GET['email'];
 

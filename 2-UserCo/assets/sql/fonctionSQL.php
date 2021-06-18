@@ -10,7 +10,14 @@ function listerUser($connex, $leMail, $leMDP, $lePrenom, $leNom) {
 function listerPoster($connex) {
      $sql="SELECT * FROM POSTERS ORDER BY idposter;";
      $result=$connex->query($sql);
-     return $result;
+     return $result;   
+}
+
+function EnrCommandeUser($laDate, $laRef, $connex){                                     //  pour enregistrer une commande depuis le pannel client
+     $sql="INSERT INTO COMMANDES (datecmd, refuser) VALUES ('".$laDate."', '".$laRef."')";  // j'ignore pourquoi cela ne fonctionne pas
+     $result=$connex->query($sql);
+     return $result; 
+
 }
 
 ?>

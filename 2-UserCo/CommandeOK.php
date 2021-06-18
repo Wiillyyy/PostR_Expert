@@ -90,24 +90,14 @@ function listPerUser($connex){
 
 				// fin code affichage du resultat
 				?></table></div>
-    <!-- Debut Enregistrer une Cmde --->
-    
-    <div class="wrapper fadeInDown">
-    <div id="formContent">
+<?php
+    $laRef= $_SESSION['id'] ;
+    $laDate= $_GET['datecmd'] ;
+    echo $laRef."<br />";
+    echo $laDate."<br />";
 
-    <form METHOD="GET" action="CommandeOK.php">
-      <h2> Passer une commande : </h2>
+    EnrCommandeUser($laRef, $laDate, $conn1);
 
-      <div><h3> Date de la commande : <br><br><input type="date" id="start" name="datecmd" value="2021-06-18" min="2021-06-18" max="2022-01-01" required><br> Poster : <br><h3>
-      
-      <?php
-      $res=listerPoster($conn1);
-      $resu = $res->fetchAll(); // on fetch le tout dans un tableau. Dans le tableau résultat, la 1ère ligne est associée a chaque ligne qui suit.
-      print( '<select name="refuser">'); // envoyé comme paramètre dans le formulaire
-      foreach ($resu as $ligne) {
-      print( '<option value='.$ligne["idposter"].'>'.$ligne["titre"].'</option>');
-      }
-        print( "</select>");
-  ?> </div>
-  <a href="CommandeOK.php">
-  <input type="submit" name="submit" value="Envoyer"></a></form> 
+    deconnexionBDD($conn1);?>
+
+    <h2>Enregistrement terminé</h2>
