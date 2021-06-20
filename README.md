@@ -29,8 +29,8 @@ Ce site web est un projet que je dois réaliser dans le cadre de ma première an
 requetes PHP & SQL, un peu de HTML et beaucoup de CSS, de quoi faire un trèes beau site 👺
 
 ## 🤖 Le Projet <a name = "proj"></a>
-Le projet est 
-[![Status](https://img.shields.io/badge/%C3%89tat%20%3A%20-bient%C3%B4t%20termin%C3%A9-orange?style=for-the-badge)]() 
+Le projet est <br>
+[![Status](https://img.shields.io/badge/-bient%C3%B4t%20termin%C3%A9-orange?style=for-the-badge)]() 
 
 ## ℹ Informations <a name = "informations"></a>
 Le rendu final du projet consiste à proposer un site web dans lequel on pourra accéder en tant que guest et consulter les posters, si on veut les ajouter dans le panier il faudra être connecté, la page de connexion permet de se connecter mais également de s'inscrire, mon serveur mail s'assurera d'envoyer un mail à l'adresse fournie pour indiquer a l'utilisateur qu'il s'est bien connecté.
